@@ -45,7 +45,7 @@ import ProjectStackBased from "src/projects/stackbased/project_post.mdx";
 import ProjectWasteWizard from "src/projects/wastewizard/project_post.mdx";
  */
 
-import AssignmentsOverviewWrapper from "src/content/assignments/OverviewWrapper.mdx"
+import AssignmentsOverview from "src/content/assignments/Overview.mdx"
 import Assignment0 from "src/content/assignments/assignment0/Assignment0.mdx"
 import Assignment1 from "src/content/assignments/assignment1/Assignment1.mdx"
 import Assignment2 from "src/content/assignments/assignment2/Assignment2.mdx"
@@ -193,7 +193,7 @@ export const App: React.FunctionComponent = () => {
                         <Route path="/projects/wastewizard" element={<ProjectWasteWizard/>} />
                         */}
                         <Route path="/assignments" element={<Assignments/>}>
-                            <Route path="" element={<AssignmentsOverviewWrapper/>} />
+                            <Route path="" element={<AssignmentsOverview/>} />
                             <Route path="assignment0" element={<Assignment0/>} />
                             <Route path="assignment1" element={<Assignment1/>} />
                             <Route path="assignment2" element={<Assignment2/>} />
