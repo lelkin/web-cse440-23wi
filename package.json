@@ -23,7 +23,7 @@
     },
     "@comment dependencies": [
         "mobx-react-router",
-        "- See https://github.com/superwf/mobx-react-router",
+        "- See https://github.com/superwf/mobx-react-router"
     ],
     "dependencies": {
         "@emotion/react": "11.x",
