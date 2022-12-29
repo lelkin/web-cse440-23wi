@@ -1,0 +1,39 @@
+import {
+    Box,
+    ButtonGroup,
+    Grid,
+} from '@mui/material'
+
+import {
+    Outlet,
+} from 'react-router-dom'
+
+import {
+    NavButton
+} from "src/common/NavButton"
+
+export const styleButtonGroup = {
+    width: "100%",
+}
+
+{/*
+No "# Assignments" header because each assignment provides its own H1
+*/}
+
+<Grid container spacing={2}>
+    <Grid item xs={12} md={3} order={{md: 2}}>
+        <Box role="navigation" aria-label="Assignments Links">
+            <ButtonGroup orientation="vertical" color="primary" sx={styleButtonGroup}>
+                <NavButton to="/assignments" match="equals">Overview</NavButton>
+                <NavButton to="/assignments/assignment0">Assignment 0</NavButton>
+                <NavButton to="/assignments/assignment1">Assignment 1</NavButton>
+                <NavButton to="/assignments/assignment2">Assignment 2</NavButton>
+                <NavButton to="/assignments/assignment3">Assignment 3</NavButton>
+                <NavButton to="/assignments/assignment4">Assignment 4</NavButton>
+            </ButtonGroup>
+        </Box>
+    </Grid>
+    <Grid item xs={12} md={9} order={{md: 1}}>
+        <Outlet />
+    </Grid>
+</Grid>
