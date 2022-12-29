@@ -5,6 +5,7 @@ import { Link } from '@mui/material'
 import { Link as RouterLink } from 'react-router-dom';
 
 interface GeneratedLinkProps {
+    children: React.ReactNode,
     href: string,
     linkType?: 'auto' | 'internal' | 'external' | 'file',
 }
