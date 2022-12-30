@@ -30,6 +30,7 @@ import {
 interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
     heading: string,
     dueDateName: keyof CourseInformationStore,
+    revisionDueDateName?: keyof CourseInformationStore,
 }
 
 /**
@@ -39,6 +40,9 @@ export const CollapseProjectMilestone: React.FunctionComponent<CollapseProjectMi
         <Stack>
             <h3 id={anchorText(props.heading)}>{props.heading}</h3>
             <p><CourseInformationDueDate dueDateName={props.dueDateName} /></p>
+            {!!props.revisionDueDateName && (
+                <p>Revision: <CourseInformationDueDate dueDateName={props.revisionDueDateName} /></p>
+            )}
         </Stack>
     }>
         {props.children}
