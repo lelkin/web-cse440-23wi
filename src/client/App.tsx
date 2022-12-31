@@ -79,7 +79,7 @@ export const App: React.FunctionComponent = () => {
                             role="navigation"
                             aria-label="Primary"
                         >
-                            <NavButton to="/" match="never">CSE 440 - Introduction to HCI - Spring 2022</NavButton>
+                            <NavButton to="/" match="never">CSE 440 - Introduction to HCI - Winter 2023</NavButton>
                             <Box flexGrow={1}/>
                             <NavButton to="/projects">Projects</NavButton>
                             <NavButton to="/assignments">Assignments</NavButton>
