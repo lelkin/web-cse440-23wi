@@ -16,21 +16,12 @@ interface AssignmentSamplesProps {
 export const AssignmentSamples: FunctionComponent<AssignmentSamplesProps> = (props) => {
     const store = useAppStore();
 
-    let renderMilestone: '1c';
-    if (props.milestone == '1b') {
-        renderMilestone = '1c';
-    } else if (props.milestone == '1c') {
-        renderMilestone = '1c';
-    } else {
-        renderMilestone = props.milestone;
-    }
-
     return (
         <React.Fragment>
             {
                 ['1b'].includes(props.milestone) && (
                     <Alert severity='warning'>
-                        Samples are from a significantly revised prior milestone.
+                        Some samples are from a significantly revised prior milestone.
                     </Alert>
                 )
             }
@@ -44,31 +35,45 @@ export const AssignmentSamples: FunctionComponent<AssignmentSamplesProps> = (pro
             </p>
             {
                 store.courseInformation.projectSamples.map(
-                    sampleCurrent => (
-                        // Ensure we have a sample for this project
-                        (renderMilestone in sampleCurrent.samples) &&
-                        // Render the sample
-                        (
-                            <React.Fragment
-                                // Generate a unique key using props.milestone.
-                                // Do not use renderMilestone, because they may not be equal.
-                                // If two milestones were to alias the same renderMilestone,
-                                // the resulting keys would not be unique.
-                                key={props.milestone + sampleCurrent.name}
-                            >
-                                <p>
-                                    <GeneratedLink href={sampleCurrent.samples[renderMilestone]}>
-                                        {'Sample ' + props.milestone}
-                                    </GeneratedLink>
-                                    {' from '}
-                                    {
-                                        (props.milestone == '1c') && 'the proposal that became '
-                                    }
-                                    <GeneratedLink href={sampleCurrent.link}>{sampleCurrent.name}</GeneratedLink>
-                                </p>
-                            </React.Fragment>
+                    (sampleCurrent) => {
+                        const renderMilestone = (() => {
+                            if (
+                                props.milestone == '1b' &&
+                                [
+                                    'BookWurm', 'Dash', 'Jasper', 'Wishing Well', // 17wi
+                                    'BackTrack', 'Hermes', 'Pilltender', 'SimPark', // 17au
+                                    'Laundr', 'notE', 'Pawsitive', 'SEEK', // 19wi
+                                ].includes(sampleCurrent.name)
+                            ) {
+                                return '1c';
+                            }
+
+                            return props.milestone;
+                        })();
+
+                        return (
+                            // Ensure we have a sample for this project
+                            (renderMilestone in sampleCurrent.samples) &&
+                            // Render the sample
+                            (
+                                <React.Fragment
+                                    // Generate a unique key using props.milestone.
+                                    // Do not use renderMilestone, because they may not be equal.
+                                    // If two milestones were to alias the same renderMilestone,
+                                    // the resulting keys would not be unique.
+                                    key={props.milestone + sampleCurrent.name}
+                                >
+                                    <p>
+                                        <GeneratedLink href={sampleCurrent.samples[renderMilestone]}>
+                                            {'Sample ' + renderMilestone}
+                                        </GeneratedLink>
+                                        {' from '}
+                                        <GeneratedLink href={sampleCurrent.link}>{sampleCurrent.name}</GeneratedLink>
+                                    </p>
+                                </React.Fragment>
+                            )
                         )
-                    )
+                    }
                 )
             }
         </React.Fragment>
