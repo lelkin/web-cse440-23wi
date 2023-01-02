@@ -149,7 +149,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-03'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction and Overview',
-            // slides: 'https://canvas.uw.edu/files/90269755/',
+            slides: 'https://canvas.uw.edu/files/100182820/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73caeacf-f221-4959-bc78-ae68011874d7',
         },
         {
