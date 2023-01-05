@@ -8,7 +8,7 @@ type TimeAndLocation = string;
 const LECTURE_TIME_AND_LOCATION: TimeAndLocation = '10:00 - 11:20 | NAN 181';
 const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
     '10:30 - 11:20 | MGH 058',
-    '11:30 - 12:20 | MGH 058',
+    '11:30 - 12:20 | MGH 295',
     '12:30 - 1:20 | MGH 058',
     '1:30 - 2:20 | MGH 058',
 ]
@@ -149,7 +149,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-03'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction and Overview',
-            slides: 'https://canvas.uw.edu/files/100182820/',
+            slides: 'https://canvas.uw.edu/files/100365103/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73caeacf-f221-4959-bc78-ae68011874d7',
         },
         {
@@ -157,7 +157,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-05'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Diamond',
-            // slides: 'https://canvas.uw.edu/files/90287283/',
+            slides: 'https://canvas.uw.edu/files/100365109/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5d87db58-194d-40c9-a9e4-ae69015c8bba',
         },
         {
@@ -503,6 +503,9 @@ export class CourseCalendarStore {
         {
             type: 'away',
             dates: [
+                DateTime.fromISO('2023-01-17'),
+                DateTime.fromISO('2023-02-07'),
+                DateTime.fromISO('2023-03-07'),
             ],
             title: 'Simona Away',
         },
