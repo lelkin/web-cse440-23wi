@@ -149,7 +149,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-03'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction and Overview',
-            slides: 'https://canvas.uw.edu/files/100365103/',
+            slides: 'https://canvas.uw.edu/files/100581762/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73caeacf-f221-4959-bc78-ae68011874d7',
         },
         {
@@ -157,7 +157,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-05'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Diamond',
-            slides: 'https://canvas.uw.edu/files/100365109/',
+            slides: 'https://canvas.uw.edu/files/100581752/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5d87db58-194d-40c9-a9e4-ae69015c8bba',
         },
         {
@@ -165,7 +165,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-10'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Research',
-            // slides: 'https://canvas.uw.edu/files/90477964/',
+            slides: 'https://canvas.uw.edu/files/100581747/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=31bef616-e417-4038-96ec-ae6e01472a01',
         },
         {
