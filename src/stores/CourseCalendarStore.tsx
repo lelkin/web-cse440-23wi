@@ -485,6 +485,7 @@ export class CourseCalendarStore {
         {
             type: 'away',
             dates: [
+                DateTime.fromISO('2023-01-17'),
             ],
             title: 'Ethan Away',
         },
@@ -497,6 +498,7 @@ export class CourseCalendarStore {
         {
             type: 'away',
             dates: [
+                DateTime.fromISO('2023-01-25'),
             ],
             title: 'Lisa Away',
         },
