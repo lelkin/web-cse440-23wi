@@ -8,7 +8,7 @@ type TimeAndLocation = string;
 const LECTURE_TIME_AND_LOCATION: TimeAndLocation = '10:00 - 11:20 | NAN 181';
 const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
     '10:30 - 11:20 | MGH 058',
-    '11:30 - 12:20 | MGH 295',
+    '11:30 - 12:20 | MGH 058',
     '12:30 - 1:20 | MGH 058',
     '1:30 - 2:20 | MGH 058',
 ]
@@ -149,7 +149,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-03'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction and Overview',
-            slides: 'https://canvas.uw.edu/files/100581762/',
+            slides: 'https://canvas.uw.edu/files/100693854/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73caeacf-f221-4959-bc78-ae68011874d7',
         },
         {
@@ -157,7 +157,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-05'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Diamond',
-            slides: 'https://canvas.uw.edu/files/100581752/',
+            slides: 'https://canvas.uw.edu/files/100693826/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5d87db58-194d-40c9-a9e4-ae69015c8bba',
         },
         {
@@ -165,7 +165,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-10'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Research',
-            slides: 'https://canvas.uw.edu/files/100581747/',
+            slides: 'https://canvas.uw.edu/files/100693807/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=31bef616-e417-4038-96ec-ae6e01472a01',
         },
         {
@@ -173,7 +173,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-12'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction to Critique',
-            // slides: 'https://canvas.uw.edu/files/90565435/',
+            slides: 'https://canvas.uw.edu/files/100693798/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8cb846a3-0342-49be-a159-ae71001d75be',
         },
         {
