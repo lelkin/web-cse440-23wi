@@ -67,125 +67,6 @@ export type BaseCalendarItemTimeAndLocation = {
 }
 
 
-// NEW
-
-// type BaseAssignmentItem = {
-//     title: string
-//     dueDateString: string
-//     assignmentLink: link
-// }
-
-
-// const BASE_ASSIGNMENT_ITEMS: {[title: string]: BaseAssignmentItem} = {}
-//     'assignment 1b_rev': {
-//         title: '1b_rev - Group Proposals',
-//         dueDateString: '2023-01-12',
-//         assignmentLink: '',
-//     },
-//     'assignment 1c': {
-//         title: '1c - Finalized Proposal',
-//         dueDateString: '2023-01-16',
-//         assignmentLink: '',
-//     },
-//     'assignment 2a': {
-//         title: '2a - Project Ideation',
-//         dueDateString: '2023-01-17',
-//         assignmentLink: '',
-//     },
-    
-//     {
-//         title: '2b - Design Research Plan',
-//         dueDateString: '2023-01-19',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2c - Design Research Check-In',
-//         dueDateString: '2023-01-23',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2d - Design Research Review',
-//         dueDateString: '2023-01-26',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2e - Task Review',
-//         dueDateString: '2023-01-30',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2f - Design Check-In',
-//         dueDateString: '2023-02-01',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2f_rev - Design Check-In',
-//         dueDateString: '2023-02-02',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2g - Design Review',
-//         dueDateString: '2023-02-06',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '2p - Presentation',
-//         dueDateString: '2023-02-08',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3a - Paper Prototype',
-//         dueDateString: '2023-02-13',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3b - Heuristic Evaluation',
-//         dueDateString: '2023-02-14',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3c - Usability Testing Check-In',
-//         dueDateString: '2023-02-16',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3d - Usability Testing Review',
-//         dueDateString: '2023-02-23',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3e - Digital Mockup',
-//         dueDateString: '2023-02-27',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '3p - Presentation',
-//         dueDateString: '2023-03-01',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '4web - Web Post',
-//         dueDateString: '2022-05-30',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '4web_final - Web Post',
-//         dueDateString: '2023-03-07',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '4poster - Poster and Pitch',
-//         dueDateString: '2023-03-08',
-//         assignmentLink: '',
-//     },
-//     {
-//         title: '4poster_final - Poster and Pitch',
-//         dueDateString: '2023-03-09',
-//         assignmentLink: '',
-//     },
-// };
-
-
 // TODO: Automatically generate these from course start daate
 const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment0" : '2023-01-05',
@@ -214,15 +95,13 @@ const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment4poster_final": '2023-03-09'
 };
 
+// TODO: Do we like this?
 export type AssignmentItem = {
     type: 'assignment-item',
     title: string,
     assignmentDueDate: dueDate
     assignmentLink: link
 }
-
-
-// END NEW
 
 export type AssignmentCalendarItem = {
     type: 'assignment',
@@ -794,113 +673,11 @@ export class CourseDataStore {
     }
 
 
-
-
     //
-    // Assignment Items
+    // Assignments
     //
 
-    // assignmentItems: AssignmentItem[] = [
-
-    //     //
-    //     // Assignment 0
-    //     //
-    //     {
-    //         type: 'assignment-item',
-    //         title: 'Assignment 0',
-    //         assignmentDueDate: 'Uploaded 3:00pm ' + localDateTime(SHARED_ASSIGNMENT_INFORMATION["assignment0"].date) + '.',
-    //         assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157',
-    //     },
-
-        // //
-        // // Assignment 1
-        // //
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 1a',
-        //     date: 'Uploaded 8:00pm ' + formatDateString('2023-01-05') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941158',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 1b',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-11') + '.',
-        //     assignmentLink: '',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 1b_revised',
-        //     date: 'Uploaded 8:00pm ' + formatDateString('2023-01-12') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 1c',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-16') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
-        // },
-
-        // //
-        // // Assignment 2
-        // //
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2a',
-        //     date: 'Completed in class ' + formatDateString('2023-01-17') + '.',
-        //     assignmentLink: null,
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2b',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-19') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941162',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2c',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-23') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2d',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-26') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941164',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2e',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-01-30') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941165',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2f',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-02-01') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941166',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2f_revised',
-        //     date: 'Uploaded 8:00pm ' + formatDateString('2023-02-02') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941167',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2g',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-02-06') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941168',
-        // },
-        // {
-        //     type: 'assignment-item',
-        //     title: 'Assignment 2p',
-        //     date: 'Uploaded 3:00pm ' + formatDateString('2023-02-08') + '.',
-        //     assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941169',
-        // },
-    // ]
-
-    
-
+    // TODO: Change these to new AsssignmentItem type.
     //
     // Assignment 0
     //
