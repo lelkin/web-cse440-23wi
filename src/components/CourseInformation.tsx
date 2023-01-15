@@ -8,13 +8,13 @@ import {
 import GeneratedLink from '../common/GeneratedLink';
 
 import { useAppStore } from '../stores/AppStoreProvider';
-import { CourseInformationStore } from "../stores/CourseInformationStore";
+import { CourseDataStore } from "../stores/CourseDataStore";
 
 /**
  * Name of the assignment date.
  */
 interface CourseInformationDueDateProps {
-    dueDateName: keyof CourseInformationStore;
+    dueDateName: keyof CourseDataStore;
 }
 
 /**
@@ -49,7 +49,7 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
  * Name of the link.
  */
 interface CourseInformationLinkProps {
-    linkName: keyof CourseInformationStore;
+    linkName: keyof CourseDataStore;
     anchorText?: string;
 }
 

@@ -21,16 +21,16 @@ import {
 } from 'src/components/CourseInformation';
 
 import {
-    CourseInformationStore
-} from "src/stores/CourseInformationStore";
+    CourseDataStore
+} from "src/stores/CourseDataStore";
 
 //
 // Properties
 //
 interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
     heading: string,
-    dueDateName: keyof CourseInformationStore,
-    revisionDueDateName?: keyof CourseInformationStore,
+    dueDateName: keyof CourseDataStore,
+    revisionDueDateName?: keyof CourseDataStore,
 }
 
 /**

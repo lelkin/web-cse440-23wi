@@ -18,7 +18,7 @@ import {
     LectureCalendarItem,
     OfficeHourCalendarItem,
     StudioCalendarItem, CalendarItem,
-} from 'src/stores/CourseCalendarStore';
+} from 'src/stores/CourseDataStore';
 
 
 const DATE_FORMAT = 'EEE MMM d';

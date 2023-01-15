@@ -1,5 +1,4 @@
-import { CourseCalendarStore } from './CourseCalendarStore';
-import { CourseInformationStore } from './CourseInformationStore';
+import { CourseDataStore } from './CourseDataStore';
 
 import { BrowserHistory } from "history";
 import { RouterStore } from 'mobx-react-router';
@@ -8,8 +7,8 @@ import { RouterStore } from 'mobx-react-router';
  * Interface of the application store.
  */
 export interface AppStore {
-    courseCalendar: CourseCalendarStore;
-    courseInformation: CourseInformationStore;
+    courseCalendar: CourseDataStore;
+    courseInformation: CourseDataStore;
     publicPath: string;
     routerStore: RouterStore;
 }
@@ -18,15 +17,15 @@ export interface AppStore {
  * Implementation of the application store.
  */
 class AppStoreImpl implements AppStore {
-    public courseCalendar: CourseCalendarStore;
-    public courseInformation: CourseInformationStore;
+    public courseCalendar: CourseDataStore;
+    public courseInformation: CourseDataStore;
     public publicPath: string;
     public routerStore: RouterStore;
 
     constructor(browserHistory: BrowserHistory, publicPath: string) {
         // Initialize our state
-        this.courseCalendar = new CourseCalendarStore();
-        this.courseInformation = new CourseInformationStore();
+        this.courseCalendar = new CourseDataStore();
+        this.courseInformation = new CourseDataStore();
 
         // Initialize our router state
         this.publicPath = publicPath;
