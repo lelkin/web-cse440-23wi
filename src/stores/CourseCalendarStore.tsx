@@ -181,7 +181,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-17'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design of Everyday Things',
-            // slides: 'https://canvas.uw.edu/files/90865835/',
+            slides: 'https://canvas.uw.edu/files/100847593/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=aacc0966-8de9-4e87-99ca-ae750145f644',
         },
         {
@@ -189,7 +189,7 @@ export class CourseCalendarStore {
             date: DateTime.fromISO('2023-01-19'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design of Everyday Things',
-            // slides: 'https://canvas.uw.edu/files/90865835/',
+            slides: 'https://canvas.uw.edu/files/100847593/',
             // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98048542-47fc-47bb-af48-ae770141c8d5',
         },
         {
