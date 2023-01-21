@@ -14,7 +14,7 @@ const DATE_FORMAT_OPTIONS = {
 } as DateTimeFormatOptions;
 
 export type link = string | null;
-type dueDate = string | null;
+type dueDate = string | null; // e.g. 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.';
 
 function formatDateString(dateString: string): string {
     return DateTime.fromISO(dateString).toLocaleString(DATE_FORMAT_OPTIONS);
@@ -67,7 +67,7 @@ export type BaseCalendarItemTimeAndLocation = {
 }
 
 
-// TODO: Automatically generate these from course start daate
+// TODO: Automatically generate these from course start date
 const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment0" : '2023-01-05',
     "assignment1a" : '2023-01-05',
@@ -95,11 +95,10 @@ const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment4poster_final": '2023-03-09'
 };
 
-// TODO: Do we like this?
 export type AssignmentItem = {
     type: 'assignment-item',
     title: string,
-    assignmentDueDate: dueDate
+    assignmentDueDate: dueDate,
     assignmentLink: link
 }
 
@@ -673,35 +672,88 @@ export class CourseDataStore {
     }
 
 
+
     //
     // Assignments
     //
 
     // TODO: Change these to new AsssignmentItem type.
-    //
-    // Assignment 0
-    //
-    dueDateAssignment0: dueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.';
-    linkCanvasAssignment0: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941157';
 
-    //
-    // Assignment 1
-    //
-    dueDateAssignment1a: dueDate =
-        'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.';
-    linkCanvasAssignment1a: link = "https://canvas.uw.edu/courses/1612132/assignments/7941158";
+    assignmentItems: AssignmentItem[] = [
+        //
+        // Assignment 0
+        //
+        {
+            type: 'assignment-item',
+            title: '0 - Introduction Slide',
+            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.',
+            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157'
+        },
+        //
+        // Assignment 1
+        //
+        {
+            type: 'assignment-item',
+            title: '1a - Individual Brainstorm',
+            assignmentDueDate:  'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.',
+            assignmentLink: "https://canvas.uw.edu/courses/1612132/assignments/7941158"
+        },
+        {
+            type: 'assignment-item',
+            title: '1b - Group Proposals',
+            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.',
+            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/8044498'
+        },
+        {
+            type: 'assignment-item',
+            title: '1b_rev - Group Proposals',
+            assignmentDueDate: 'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.',
+            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160'
+        },
+        {
+            type: 'assignment-item',
+            title: '1c - Finalized Proposal',
+            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.',
+            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161'
+        },
+        
+    ];
 
-    dueDateAssignment1b: dueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.';
-    linkCanvasAssignment1b: link = 'https://canvas.uw.edu/courses/1612132/assignments/8044498';
-    dueDateAssignment1b_revised: dueDate =
-        'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.';
-    linkCanvasAssignment1b_revised: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941160';
 
-    dueDateAssignment1c: dueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.';
-    linkCanvasAssignment1c: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
+    getAssignmentItemByTitle(itemTitle: string): AssignmentItem | undefined {
+        const store = useAppStore();
+
+        return store.courseInformation.assignmentItems.find(
+            function(assignmentItem) {
+                return assignmentItem.title == itemTitle;
+            }
+        )
+    }
+
+    // //
+    // // // Assignment 0
+    // // //
+    // dueDateAssignment0: dueDate =
+    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.';
+    // linkCanvasAssignment0: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941157';
+
+    // //
+    // // Assignment 1
+    // //
+    // dueDateAssignment1a: dueDate =
+    //     'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.';
+    // linkCanvasAssignment1a: link = "https://canvas.uw.edu/courses/1612132/assignments/7941158";
+
+    // dueDateAssignment1b: dueDate =
+    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.';
+    // linkCanvasAssignment1b: link = 'https://canvas.uw.edu/courses/1612132/assignments/8044498';
+    // dueDateAssignment1b_revised: dueDate =
+    //     'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.';
+    // linkCanvasAssignment1b_revised: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941160';
+
+    // dueDateAssignment1c: dueDate =
+    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.';
+    // linkCanvasAssignment1c: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
 
 
     //

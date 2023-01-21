@@ -18,6 +18,13 @@ interface CourseInformationDueDateProps {
 }
 
 /**
+ * Assignment title
+ */
+interface CourseInformationDueDateNewProps {
+    assignmentTitle: keyof CourseDataStore;
+}
+
+/**
  * Render a named assignment date from the course information.
  */
 export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDateProps> = (props) => {
@@ -44,12 +51,43 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
     }
 }
 
+/**
+ * Render a named assignment date from the course information.
+ */
+export const CourseInformationDueDateNew: FunctionComponent<CourseInformationDueDateNewProps> = (props) => {
+    const store = useAppStore();
+
+    const assignmentItem = store.courseInformation.getAssignmentItemByTitle(props.assignmentTitle);
+
+    if (typeof assignmentItem == 'undefined') {
+        throw new Error(
+            `Assignment '${props.assignmentTitle}' must be in store.courseInformation.`
+        );
+    }
+
+    const dueDateText = assignmentItem.assignmentDueDate;
+
+    if (typeof dueDateText == 'string') {
+        return <span>{dueDateText}</span>;
+    } else {
+        return <Box component="span" sx={{color: "red"}}>Due date to be added</Box>;
+    }
+}
+
 
 /**
  * Name of the link.
  */
 interface CourseInformationLinkProps {
     linkName: keyof CourseDataStore;
+    anchorText?: string;
+}
+
+/**
+ * Assignment title
+ */
+interface CourseInformationLinkNewProps {
+    assignmentTitle: keyof CourseDataStore;
     anchorText?: string;
 }
 
@@ -69,6 +107,34 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
 
     const link = store.courseInformation[props.linkName] as string;
     let anchorText = link;
+    if (props.anchorText) {
+        anchorText = props.anchorText;
+    }
+
+    if (link) {
+        return <GeneratedLink href={link}>{anchorText}</GeneratedLink>;
+    } else {
+        return <Box component="span" sx={{color: "red"}}>Link to be added</Box>;
+    }
+}
+
+/**
+ * Render a named link from the course information.
+ */
+export const CourseInformationLinkNew: FunctionComponent<CourseInformationLinkNewProps> = (props) => {
+    const store = useAppStore();
+
+    const assignmentItem = store.courseInformation.getAssignmentItemByTitle(props.assignmentTitle);
+
+    if (typeof assignmentItem == 'undefined') {
+        throw new Error(
+            `Assignment '${props.assignmentTitle}' must be in store.courseInformation.`
+        );
+    }
+
+    const link = assignmentItem.assignmentLink as string;
+    let anchorText = link;
+
     if (props.anchorText) {
         anchorText = props.anchorText;
     }
