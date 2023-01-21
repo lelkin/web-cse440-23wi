@@ -654,7 +654,7 @@ export class CourseDataStore {
     getCalendarItems(calendarDate: CalendarDate, itemType: string): CalendarItem[] {
         const store = useAppStore();
 
-        return store.courseCalendar.calendarItems.filter(
+        return store.courseDataStore.calendarItems.filter(
             function(calendarItem) {
                 if ('date' in calendarItem) {
                     if (!calendarItem.date.equals(calendarDate.date)) {
@@ -723,7 +723,7 @@ export class CourseDataStore {
     getAssignmentItemByTitle(itemTitle: string): AssignmentItem | undefined {
         const store = useAppStore();
 
-        return store.courseInformation.assignmentItems.find(
+        return store.courseDataStore.assignmentItems.find(
             function(assignmentItem) {
                 return assignmentItem.title == itemTitle;
             }

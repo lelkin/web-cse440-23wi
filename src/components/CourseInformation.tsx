@@ -31,9 +31,9 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
     const store = useAppStore();
 
     // Check this because TypeScript doesn't ensure in MDX files
-    if (!(props.dueDateName in store.courseInformation)) {
+    if (!(props.dueDateName in store.courseDataStore)) {
         throw new Error(
-            `dueDateName '${props.dueDateName}' must be in store.courseInformation.`
+            `dueDateName '${props.dueDateName}' must be in store.courseDataStore.`
         );
     }
     if (!(props.dueDateName.startsWith('dueDate'))) {
@@ -42,7 +42,7 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
         );
     }
 
-    const dueDateText = store.courseInformation[props.dueDateName] as string;
+    const dueDateText = store.courseDataStore[props.dueDateName] as string;
 
     if (dueDateText) {
         return <span>{dueDateText}</span>;
@@ -57,11 +57,11 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
 export const CourseInformationDueDateNew: FunctionComponent<CourseInformationDueDateNewProps> = (props) => {
     const store = useAppStore();
 
-    const assignmentItem = store.courseInformation.getAssignmentItemByTitle(props.assignmentTitle);
+    const assignmentItem = store.courseDataStore.getAssignmentItemByTitle(props.assignmentTitle);
 
     if (typeof assignmentItem == 'undefined') {
         throw new Error(
-            `Assignment '${props.assignmentTitle}' must be in store.courseInformation.`
+            `Assignment '${props.assignmentTitle}' must be in store.courseDataStore.`
         );
     }
 
@@ -98,14 +98,14 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
     const store = useAppStore();
 
     // Check this because TypeScript doesn't ensure in MDX files
-    if (!(props.linkName in store.courseInformation)) {
-        throw new Error('linkName must be in store.courseInformation.');
+    if (!(props.linkName in store.courseDataStore)) {
+        throw new Error('linkName must be in store.courseDataStore.');
     }
     if (!(props.linkName.startsWith('link'))) {
         throw new Error('linkName must start with "link".');
     }
 
-    const link = store.courseInformation[props.linkName] as string;
+    const link = store.courseDataStore[props.linkName] as string;
     let anchorText = link;
     if (props.anchorText) {
         anchorText = props.anchorText;
@@ -124,11 +124,11 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
 export const CourseInformationLinkNew: FunctionComponent<CourseInformationLinkNewProps> = (props) => {
     const store = useAppStore();
 
-    const assignmentItem = store.courseInformation.getAssignmentItemByTitle(props.assignmentTitle);
+    const assignmentItem = store.courseDataStore.getAssignmentItemByTitle(props.assignmentTitle);
 
     if (typeof assignmentItem == 'undefined') {
         throw new Error(
-            `Assignment '${props.assignmentTitle}' must be in store.courseInformation.`
+            `Assignment '${props.assignmentTitle}' must be in store.courseDataStore.`
         );
     }
 

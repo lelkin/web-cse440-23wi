@@ -7,8 +7,7 @@ import { RouterStore } from 'mobx-react-router';
  * Interface of the application store.
  */
 export interface AppStore {
-    courseCalendar: CourseDataStore;
-    courseInformation: CourseDataStore;
+    courseDataStore: CourseDataStore;
     publicPath: string;
     routerStore: RouterStore;
 }
@@ -17,15 +16,13 @@ export interface AppStore {
  * Implementation of the application store.
  */
 class AppStoreImpl implements AppStore {
-    public courseCalendar: CourseDataStore;
-    public courseInformation: CourseDataStore;
+    public courseDataStore: CourseDataStore;
     public publicPath: string;
     public routerStore: RouterStore;
 
     constructor(browserHistory: BrowserHistory, publicPath: string) {
         // Initialize our state
-        this.courseCalendar = new CourseDataStore();
-        this.courseInformation = new CourseDataStore();
+        this.courseDataStore = new CourseDataStore();
 
         // Initialize our router state
         this.publicPath = publicPath;

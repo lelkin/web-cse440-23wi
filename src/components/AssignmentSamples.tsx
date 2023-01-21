@@ -34,7 +34,7 @@ export const AssignmentSamples: FunctionComponent<AssignmentSamplesProps> = (pro
                 feedback from the course staff in the context of your own work.
             </p>
             {
-                store.courseInformation.projectSamples.map(
+                store.courseDataStore.projectSamples.map(
                     (sampleCurrent) => {
                         const renderMilestone = (() => {
                             if (
