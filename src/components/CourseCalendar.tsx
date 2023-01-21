@@ -8,16 +8,17 @@ import * as React from 'react';
 
 import { useAppStore } from '../stores/AppStoreProvider';
 import {
-    CalendarDate,
-    CalendarWeek,
     AssignmentCalendarItem,
     AwayCalendarItem,
     BaseCalendarItemTimeAndLocation,
+    CalendarDate,
+    CalendarItem,
+    CalendarWeek,
     EventCalendarItem,
     HolidayCalendarItem,
     LectureCalendarItem,
     OfficeHourCalendarItem,
-    StudioCalendarItem, CalendarItem,
+    StudioCalendarItem,
 } from 'src/stores/CourseDataStore';
 
 
