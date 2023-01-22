@@ -55,7 +55,7 @@ type ProjectSampleKey = typeof ProjectSampleKeyValues[number];
 export interface ProjectSample {
     name: string,
     link: string,
-    sampleLinks: AssignmentSampleLinks,
+    sampleCanvasLinks: AssignmentSampleLinks,
 }
 
 /**
@@ -74,7 +74,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         backtrack: {
             name: 'BackTrack',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/backtrack/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133304',
                 assignment1c: 'https://canvas.uw.edu/files/100133305',
                 assignment2b: 'https://canvas.uw.edu/files/100133306',
@@ -97,7 +97,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         bookwurm: {
             name: 'BookWurm',
             link: 'https://courses.cs.washington.edu/courses/cse440/17wi/projects/bookwurm/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133321',
                 assignment1c: 'https://canvas.uw.edu/files/100133322',
                 assignment2b: 'https://canvas.uw.edu/files/100133323',
@@ -119,7 +119,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         clark: {
             name: 'Clark',
             link: 'https://courses.cs.washington.edu/courses/cse440/22sp/projects/clark',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133338',
                 assignment1c: 'https://canvas.uw.edu/files/100133339',
                 assignment2b: 'https://canvas.uw.edu/files/100133340',
@@ -140,7 +140,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         cupanion: {
             name: 'Cup-anion',
             link: 'https://courses.cs.washington.edu/courses/cse440/22sp/projects/cupanion',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133353',
                 assignment1c: 'https://canvas.uw.edu/files/100133354',
                 assignment2b: 'https://canvas.uw.edu/files/100133355',
@@ -161,7 +161,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         dash: {
             name: 'Dash',
             link: 'https://courses.cs.washington.edu/courses/cse440/17wi/projects/dash/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133368',
                 assignment1c: 'https://canvas.uw.edu/files/100133369',
                 assignment2b: 'https://canvas.uw.edu/files/100133370',
@@ -183,7 +183,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         hermes: {
             name: 'Hermes',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/hermes/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133384',
                 assignment1c: 'https://canvas.uw.edu/files/100133385',
                 assignment2b: 'https://canvas.uw.edu/files/100133386',
@@ -206,7 +206,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         jasper: {
             name: 'Jasper',
             link: 'https://courses.cs.washington.edu/courses/cse440/17wi/projects/jasper/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133401',
                 assignment1c: 'https://canvas.uw.edu/files/100133402',
                 assignment2b: 'https://canvas.uw.edu/files/100133403',
@@ -228,7 +228,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         laundr: {
             name: 'Laundr',
             link: 'https://courses.cs.washington.edu/courses/cse440/19wi/assets/projects/laundr/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133417',
                 assignment1c: 'https://canvas.uw.edu/files/100133418',
                 assignment2b: 'https://canvas.uw.edu/files/100133419',
@@ -250,7 +250,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         note: {
             name: 'notE',
             link: 'https://courses.cs.washington.edu/courses/cse440/19wi/assets/projects/note/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133434',
                 assignment1c: 'https://canvas.uw.edu/files/100133435',
                 assignment2b: 'https://canvas.uw.edu/files/100133436',
@@ -272,7 +272,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         pawsitive: {
             name: 'Pawsitive',
             link: 'https://courses.cs.washington.edu/courses/cse440/19wi/assets/projects/pawsitive/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133449',
                 assignment1c: 'https://canvas.uw.edu/files/100133450',
                 assignment2b: 'https://canvas.uw.edu/files/100133451',
@@ -293,7 +293,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         pilltender: {
             name: 'Pilltender',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/pilltender/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133466',
                 assignment1c: 'https://canvas.uw.edu/files/100133467',
                 assignment2b: 'https://canvas.uw.edu/files/100133468',
@@ -316,7 +316,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         seek: {
             name: 'SEEK',
             link: 'https://courses.cs.washington.edu/courses/cse440/19wi/assets/projects/seek/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133483',
                 assignment1c: 'https://canvas.uw.edu/files/100133484',
                 assignment2b: 'https://canvas.uw.edu/files/100133485',
@@ -338,7 +338,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         simpark: {
             name: 'SimPark',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/simpark/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133499',
                 assignment1c: 'https://canvas.uw.edu/files/100133500',
                 assignment2b: 'https://canvas.uw.edu/files/100133501',
@@ -361,7 +361,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         sprout: {
             name: 'Sprout',
             link: 'https://courses.cs.washington.edu/courses/cse440/22sp/projects/sprout',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133516',
                 assignment1c: 'https://canvas.uw.edu/files/100133517',
                 assignment2b: 'https://canvas.uw.edu/files/100133518',
@@ -382,7 +382,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         wastewizard: {
             name: 'Waste Wizard',
             link: 'https://courses.cs.washington.edu/courses/cse440/22sp/projects/wastewizard',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133531',
                 assignment1c: 'https://canvas.uw.edu/files/100133532',
                 assignment2b: 'https://canvas.uw.edu/files/100133533',
@@ -403,7 +403,7 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         wishingwell: {
             name: 'Wishing Well',
             link: 'https://courses.cs.washington.edu/courses/cse440/17wi/projects/wishingwell/',
-            sampleLinks: {
+            sampleCanvasLinks: {
                 assignment1b: 'https://canvas.uw.edu/files/100133560',
                 assignment1c: 'https://canvas.uw.edu/files/100133563',
                 assignment2b: 'https://canvas.uw.edu/files/100133568',
