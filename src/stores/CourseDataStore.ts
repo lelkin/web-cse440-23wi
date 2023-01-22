@@ -1110,7 +1110,4 @@ export class CourseDataStore {
             }
         }
     ] 
-
-    // // Link regarding accessible presentations
-    // // linkAccessiblePresentations: link = 'https://interactions.acm.org/archive/view/july-august-2017/making-your-presentation-accessible'
 }
