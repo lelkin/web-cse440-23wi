@@ -150,7 +150,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction and Overview',
             slides: 'https://canvas.uw.edu/files/100693854/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=73caeacf-f221-4959-bc78-ae68011874d7',
         },
         {
             type: 'lecture',
@@ -158,7 +157,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Diamond',
             slides: 'https://canvas.uw.edu/files/100693826/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5d87db58-194d-40c9-a9e4-ae69015c8bba',
         },
         {
             type: 'lecture',
@@ -166,7 +164,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design Research',
             slides: 'https://canvas.uw.edu/files/100693807/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=31bef616-e417-4038-96ec-ae6e01472a01',
         },
         {
             type: 'lecture',
@@ -174,7 +171,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Introduction to Critique',
             slides: 'https://canvas.uw.edu/files/100693798/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8cb846a3-0342-49be-a159-ae71001d75be',
         },
         {
             type: 'lecture',
@@ -182,7 +178,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design of Everyday Things',
             slides: 'https://canvas.uw.edu/files/100847593/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=aacc0966-8de9-4e87-99ca-ae750145f644',
         },
         {
             type: 'lecture',
@@ -190,7 +185,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Design of Everyday Things',
             slides: 'https://canvas.uw.edu/files/100847593/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=98048542-47fc-47bb-af48-ae770141c8d5',
         },
         {
             type: 'lecture',
@@ -198,7 +192,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Task Analysis',
             // slides: 'https://canvas.uw.edu/files/91098921/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=218aab5f-7e6c-48e7-bb73-ae7d012cc673',
         },
         {
             type: 'lecture',
@@ -206,7 +199,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Models and Human Performance',
             // slides: 'https://canvas.uw.edu/files/91192666/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8a2421f5-305e-4789-8129-ae7e01437b20',
         },
         {
             type: 'lecture',
@@ -214,7 +206,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Storyboarding, Paper Prototyping, and Testing',
             // slides: 'https://canvas.uw.edu/files/91400789/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fb1d746a-a127-453a-9a57-ae6600d820ba',
         },
         {
             type: 'lecture',
@@ -222,7 +213,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Effective Presentations',
             // slides: 'https://canvas.uw.edu/files/91705969/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bd7a4526-a43a-4e22-a690-ae8b00f782f9',
         },
         {
             type: 'lecture',
@@ -230,7 +220,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Inspection',
             // slides: 'https://canvas.uw.edu/files/91968017/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2169ac31-bf8d-4cb4-a2fe-ae930042d617',
         },
         {
             type: 'lecture',
@@ -238,7 +227,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Patterns and Interface Implementation',
             // slides: 'https://canvas.uw.edu/files/92049795/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4753b05f-53dc-41dc-b9c0-ae93016b9c49',
         },
         {
             type: 'lecture',
@@ -246,7 +234,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Designing for Diverse Needs',
             // slides: 'https://canvas.uw.edu/files/92303593/',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=78506a13-5404-4aa0-bc0b-ae6600d82f45',
         },
         {
             type: 'lecture',
@@ -254,7 +241,6 @@ export class CourseDataStore {
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'History',
             // slides: 'https://canvas.uw.edu/files/92480229',
-            // video: 'https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=85e919e8-7d61-4cc1-8d15-ae6600d83140'
         },
 
         //
