@@ -10,7 +10,7 @@ import { useAppStore } from '../stores/AppStoreProvider';
 import {
     AssignmentCalendarItem,
     AwayCalendarItem,
-    BaseCalendarItemTimeAndLocation,
+    BaseCalendarItemTimeAndLocations,
     CalendarDate,
     CalendarItem,
     CalendarWeek,
@@ -19,7 +19,7 @@ import {
     LectureCalendarItem,
     OfficeHourCalendarItem,
     StudioCalendarItem,
-} from 'src/stores/CourseDataStore';
+} from 'src/types/CourseDataStore';
 
 
 const DATE_FORMAT = 'EEE MMM d';
@@ -206,20 +206,18 @@ function renderLectureCalendarItems(calendarDate: CalendarDate) {
                                     [<a href={calendarItem.slides}>slides</a>]
                                 </React.Fragment>
                             }
-                            {(calendarItem.slides != undefined && calendarItem.video != undefined) &&
+                            {   /* TODO: Consider linking individual videos when easy to maintain/publish
+                                (calendarItem.slides != undefined && calendarItem.video != undefined) &&
                                 <React.Fragment>
                                     {" "}
                                 </React.Fragment>
                             }
-                            {calendarItem.video != undefined &&
+                            {
+                                calendarItem.video != undefined &&
                                 <React.Fragment>
                                     [<a href={calendarItem.video}>video</a>]
                                 </React.Fragment>
-                            }
-                            {(calendarItem.slides != undefined || calendarItem.video != undefined) &&
-                                <React.Fragment>
-                                    <br/>
-                                </React.Fragment>
+                                */
                             }
                         </Box>
                     )
@@ -290,15 +288,18 @@ function renderSectionCalendarItems(calendarDate: CalendarDate) {
                                     [<a href={calendarItem.slides}>slides</a>]
                                 </React.Fragment>
                             }
-                            {(calendarItem.slides != undefined && calendarItem.video != undefined) &&
+                            {   /* TODO: Consider linking individual videos when easy to maintain/publish
+                                (calendarItem.slides != undefined && calendarItem.video != undefined) &&
                                 <React.Fragment>
                                     {" "}
                                 </React.Fragment>
                             }
-                            {calendarItem.video != undefined &&
+                            }
+                                calendarItem.video != undefined &&
                                 <React.Fragment>
                                     [<a href={calendarItem.video}>video</a>]
                                 </React.Fragment>
+                                */
                             }
                         </Box>
                     )
@@ -308,7 +309,7 @@ function renderSectionCalendarItems(calendarDate: CalendarDate) {
     )
 }
 
-function renderTimeAndLocation(calendarItem: BaseCalendarItemTimeAndLocation) {
+function renderTimeAndLocation(calendarItem: BaseCalendarItemTimeAndLocations) {
     return <React.Fragment>
         {'timeAndLocation' in calendarItem &&
             <React.Fragment>

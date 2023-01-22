@@ -1,5 +1,15 @@
 import { useAppStore } from 'src/stores/AppStoreProvider';
 
+import {
+    AssignmentItem,
+    CalendarDate,
+    CalendarItem,
+    CalendarWeek,
+    DueDate,
+    Link,
+    TimeAndLocation
+} from 'src/types/CourseDataStore';
+
 // info store
 import {
     DateTime,
@@ -13,15 +23,10 @@ const DATE_FORMAT_OPTIONS = {
     weekday: 'long'
 } as DateTimeFormatOptions;
 
-export type link = string | null;
-type dueDate = string | null; // e.g. 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.';
-
 function formatDateString(dateString: string): string {
     return DateTime.fromISO(dateString).toLocaleString(DATE_FORMAT_OPTIONS);
 }
 // end info store
-
-type TimeAndLocation = string;
 
 const LECTURE_TIME_AND_LOCATION: TimeAndLocation = '10:00 - 11:20 | NAN 181';
 const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
@@ -40,31 +45,7 @@ const POSTER_SESSION_TIME_AND_LOCATION: TimeAndLocation = '11:00 - 12:00 | CSE A
 const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 624';
 const OFFICE_HOUR_SIMONA_TIME_AND_LOCATION: TimeAndLocation = '2:30 - 3:30 | CSE 3rd Floor Breakout';
 
-export type CalendarDate = {
-    date: DateTime
-}
 
-export type CalendarWeek = {
-    days: CalendarDate[]
-}
-
-/**
- * A calendar item has either a date or a list of dates.
- */
-type BaseCalendarItemDates = {
-    date: DateTime
-} | {
-    dates: DateTime[]
-}
-
-/**
- * A calendar item location may be one or more locations.
- */
-export type BaseCalendarItemTimeAndLocation = {
-    timeAndLocation: TimeAndLocation
-} | {
-    timeAndLocations: TimeAndLocation[]
-}
 
 
 // TODO: Automatically generate these from course start date
@@ -95,60 +76,6 @@ const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment4poster_final": '2023-03-09'
 };
 
-export type AssignmentItem = {
-    type: 'assignment-item',
-    title: string,
-    assignmentDueDate: dueDate,
-    assignmentLink: link
-}
-
-export type AssignmentCalendarItem = {
-    type: 'assignment',
-    title: string,
-} & BaseCalendarItemDates;
-
-export type AwayCalendarItem = {
-    type: 'away',
-    title: string,
-} & BaseCalendarItemDates;
-
-export type EventCalendarItem = {
-    type: 'event',
-    title: string,
-} & BaseCalendarItemDates & BaseCalendarItemTimeAndLocation;
-
-export type HolidayCalendarItem = {
-    type: 'holiday',
-    title: string,
-} & BaseCalendarItemDates;
-
-export type LectureCalendarItem = {
-    type: 'lecture',
-    title: string,
-    slides?: link,
-    video?: link,
-} & BaseCalendarItemDates & BaseCalendarItemTimeAndLocation;
-
-export type OfficeHourCalendarItem = {
-    type: 'officehour',
-    title: string,
-} & BaseCalendarItemDates & BaseCalendarItemTimeAndLocation;
-
-export type StudioCalendarItem = {
-    type: 'studio',
-    title: string,
-    slides?: link,
-    video?: link,
-} & BaseCalendarItemDates & BaseCalendarItemTimeAndLocation;
-
-export type CalendarItem =
-    AssignmentCalendarItem |
-    AwayCalendarItem |
-    EventCalendarItem |
-    HolidayCalendarItem |
-    LectureCalendarItem |
-    OfficeHourCalendarItem |
-    StudioCalendarItem;
 
 export class CourseDataStore {
     /**
@@ -156,19 +83,19 @@ export class CourseDataStore {
      */
 
     // Link to course Canvas
-    linkCanvas: link = 'https://canvas.uw.edu/courses/1612132';
+    linkCanvas: Link = 'https://canvas.uw.edu/courses/1612132';
 
     // Link to course GitHub
-    linkGitHub: link = 'https://github.com/uwcse440/web-cse440-23wi';
+    linkGitHub: Link = 'https://github.com/uwcse440/web-cse440-23wi';
 
     // Link to university syllabus policies and guidelines
-    linkUniversitySyllabusGuidelines: link = 'https://registrar.washington.edu/staffandfaculty/syllabus-guidelines/';
+    linkUniversitySyllabusGuidelines: Link = 'https://registrar.washington.edu/staffandfaculty/syllabus-guidelines/';
 
     //
     // Readings
     //
-    linkReadingPersonalInformatics: link = 'https://doi.org/10.1145/1753326.1753409';
-    linkReadingQuantifiedSelf: link = 'https://archive.wired.com/medtech/health/magazine/17-07/lbnp_knowthyself';
+    linkReadingPersonalInformatics: Link = 'https://doi.org/10.1145/1753326.1753409';
+    linkReadingQuantifiedSelf: Link = 'https://archive.wired.com/medtech/health/magazine/17-07/lbnp_knowthyself';
 
     /**
      * Start and end dates for the course.
@@ -759,87 +686,87 @@ export class CourseDataStore {
     //
     // Assignment 2
     //
-    dueDateAssignment2a: dueDate =
+    dueDateAssignment2a: DueDate =
         'Completed in class ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2a"]) + '.';
-    linkCanvasAssignment2a: link = null;
+    linkCanvasAssignment2a: Link = null;
 
-    dueDateAssignment2b: dueDate =
+    dueDateAssignment2b: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2b"]) + '.';
-    linkCanvasAssignment2b: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941162';
+    linkCanvasAssignment2b: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941162';
 
-    dueDateAssignment2c: dueDate =
+    dueDateAssignment2c: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2c"]) + '.';
-    linkCanvasAssignment2c: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
+    linkCanvasAssignment2c: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
 
-    dueDateAssignment2d: dueDate =
+    dueDateAssignment2d: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2d"]) + '.';
-    linkCanvasAssignment2d: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941164';
+    linkCanvasAssignment2d: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941164';
 
-    dueDateAssignment2e: dueDate =
+    dueDateAssignment2e: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2e"]) + '.';
-    linkCanvasAssignment2e: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941165';
+    linkCanvasAssignment2e: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941165';
 
-    dueDateAssignment2f: dueDate =
+    dueDateAssignment2f: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2f"]) + '.';
-    linkCanvasAssignment2f: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941166';
-    dueDateAssignment2f_revised: dueDate =
+    linkCanvasAssignment2f: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941166';
+    dueDateAssignment2f_revised: DueDate =
         'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2f_rev"]) + '.';
-    linkCanvasAssignment2f_revised: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941167';
+    linkCanvasAssignment2f_revised: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941167';
 
-    dueDateAssignment2g: dueDate =
+    dueDateAssignment2g: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2g"]) + '.';
-    linkCanvasAssignment2g: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941168';
+    linkCanvasAssignment2g: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941168';
 
-    dueDateAssignment2p: dueDate =
+    dueDateAssignment2p: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2p"]) + '.';
-    linkCanvasAssignment2p: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941169';
+    linkCanvasAssignment2p: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941169';
 
     //
     // Assignment 3
     //
-    dueDateAssignment3a: dueDate =
+    dueDateAssignment3a: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3a"]) + '.';
-    linkCanvasAssignment3a: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941170';
+    linkCanvasAssignment3a: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941170';
 
-    dueDateAssignment3b: dueDate =
+    dueDateAssignment3b: DueDate =
         'Submitted with Assignment 3c.';
 
-    dueDateAssignment3c: dueDate =
+    dueDateAssignment3c: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3c"]) + '.';
-    linkCanvasAssignment3c: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941172';
+    linkCanvasAssignment3c: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941172';
 
-    dueDateAssignment3d: dueDate =
+    dueDateAssignment3d: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3d"]) + '.';
-    linkCanvasAssignment3d: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941173';
+    linkCanvasAssignment3d: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941173';
 
-    dueDateAssignment3e: dueDate =
+    dueDateAssignment3e: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3e"]) + '.';
-    linkCanvasAssignment3e: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941174';
+    linkCanvasAssignment3e: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941174';
 
-    dueDateAssignment3p: dueDate =
+    dueDateAssignment3p: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3p"]) + '.';
-    linkCanvasAssignment3p: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941175';
+    linkCanvasAssignment3p: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941175';
 
     //
     // Assignment 4
     //
-    dueDateAssignment4web: dueDate =
+    dueDateAssignment4web: DueDate =
         'Uploaded 11:59pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4web"]) + '.';
-    linkCanvasAssignment4web: link = 'https://canvas.uw.edu/courses/1545349/assignments/7332263';
+    linkCanvasAssignment4web: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7332263';
 
-    dueDateAssignment4web_final: dueDate =
+    dueDateAssignment4web_final: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4web_final"]) + '.';
-    linkCanvasAssignment4web_final: link = 'https://canvas.uw.edu/courses/1545349/assignments/7398746';
+    linkCanvasAssignment4web_final: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398746';
 
-    dueDateAssignment4poster: dueDate =
+    dueDateAssignment4poster: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster"]) + '.';
-    linkCanvasAssignment4poster: link = 'https://canvas.uw.edu/courses/1545349/assignments/7398750';
+    linkCanvasAssignment4poster: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398750';
 
-    dueDateAssignment4poster_final: dueDate =
+    dueDateAssignment4poster_final: DueDate =
         'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + '.';
-    linkCanvasAssignment4poster_final: link = 'https://canvas.uw.edu/courses/1545349/assignments/7398752';
+    linkCanvasAssignment4poster_final: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398752';
 
-    dueDateAssignment4poster_session: dueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
+    dueDateAssignment4poster_session: DueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
     //
     // Samples
     //
