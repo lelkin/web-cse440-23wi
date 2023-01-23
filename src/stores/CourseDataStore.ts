@@ -15,6 +15,7 @@ import {
     DateTime,
     DateTimeFormatOptions,
 } from 'luxon';
+import {ProjectSamplesStore, ProjectSamplesStoreImpl} from "src/stores/ProjectSamplesStore";
 
 // info store
 const DATE_FORMAT_OPTIONS = {
@@ -753,11 +754,14 @@ export class CourseDataStore {
     linkCanvasAssignment4poster_final: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398752';
 
     dueDateAssignment4poster_session: DueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
+
+    projectSamplesStore: ProjectSamplesStore = new ProjectSamplesStoreImpl();
+
     //
     // Samples
     //
+    /*
     projectSamples = [
-        /* TODO Samples */
         {
             name: 'BackTrack',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/backtrack/',
@@ -1109,5 +1113,6 @@ export class CourseDataStore {
                 '4poster': 'https://canvas.uw.edu/files/100133654'
             }
         }
-    ] 
+    ]
+    */
 }

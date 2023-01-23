@@ -10,17 +10,25 @@ const AssignmentSampleLinkKeyValues = [
     'assignment2e',
     'assignment2f',
     'assignment2g',
-    'assignment2h',
+    // 'assignment2h',
     'assignment2p',
     'assignment3a',
-    'assignment3b',
+    // 'assignment3b',
     'assignment3c',
     'assignment3d',
     'assignment3e',
     'assignment3p',
     'assignment4poster',
-];
-type AssignmentSampleLinkKey = typeof AssignmentSampleLinkKeyValues[number];
+] as const;
+export type AssignmentSampleLinkKey = typeof AssignmentSampleLinkKeyValues[number];
+
+export function assertAssignmentSampleLinkKey(value: unknown): asserts value is AssignmentSampleLinkKey {
+    const valid = (AssignmentSampleLinkKeyValues as unknown as Array<unknown>).includes(value);
+
+    if (!valid) {
+        throw new Error(`Invalid AssignmentSampleLinkKey: ${value}`)
+    }
+}
 
 type AssignmentSampleLinks = {
     [item in AssignmentSampleLinkKey]: string
@@ -29,7 +37,7 @@ type AssignmentSampleLinks = {
 /**
  * Names for each sample project.
  */
-const ProjectSampleKeyValues = [
+export const ProjectSampleKeyValues = [
     'backtrack',
     'bookwurm',
     'clark',
@@ -46,7 +54,7 @@ const ProjectSampleKeyValues = [
     'sprout',
     'wastewizard',
     'wishingwell',
-];
+] as const;
 type ProjectSampleKey = typeof ProjectSampleKeyValues[number];
 
 /**
@@ -70,7 +78,7 @@ export interface ProjectSamplesStore {
 }
 
 export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
-    samples = {
+    samples: ProjectSamples = {
         backtrack: {
             name: 'BackTrack',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/backtrack/',
@@ -302,10 +310,10 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133471',
                 assignment2f: 'https://canvas.uw.edu/files/100133472',
                 assignment2g: 'https://canvas.uw.edu/files/100133473',
-                '2h': 'https://canvas.uw.edu/files/100133474',
+                // '2h': 'https://canvas.uw.edu/files/100133474',
                 assignment2p: 'https://canvas.uw.edu/files/100133475',
                 assignment3a: 'https://canvas.uw.edu/files/100133476',
-                '3b': 'https://canvas.uw.edu/files/100133477',
+                // '3b': 'https://canvas.uw.edu/files/100133477',
                 assignment3c: 'https://canvas.uw.edu/files/100133478',
                 assignment3d: 'https://canvas.uw.edu/files/100133479',
                 assignment3e: 'https://canvas.uw.edu/files/100133480',
