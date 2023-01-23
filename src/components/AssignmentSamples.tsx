@@ -29,7 +29,8 @@ export const AssignmentSamples: React.FunctionComponent<AssignmentSamplesProps> 
                 feedback from the course staff in the context of your own work.
             </p>
             {
-                ['assignment1b'].includes(props.milestone) && (
+                (['assignment1b'].includes(props.milestone)) &&
+                (
                     <Alert severity='warning'>
                         Some samples are from a significantly revised prior milestone.
                     </Alert>
@@ -59,7 +60,6 @@ export const AssignmentSamples: React.FunctionComponent<AssignmentSamplesProps> 
                     return (
                         // Ensure we have a sample for this project
                         (!!sampleCurrent.sampleCanvasLinks?.[renderMilestone]) &&
-                        // Render the sample
                         (
                             <React.Fragment key={sampleKeyCurrent}>
                                 <p>
