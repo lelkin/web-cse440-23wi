@@ -47,9 +47,7 @@ const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 6
 const OFFICE_HOUR_SIMONA_TIME_AND_LOCATION: TimeAndLocation = '2:30 - 3:30 | CSE 3rd Floor Breakout';
 
 
-
-
-// TODO: Automatically generate these from course start date
+// // TODO: Automatically generate these from course start date
 const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
     "assignment0" : '2023-01-05',
     "assignment1a" : '2023-01-05',
@@ -304,125 +302,126 @@ export class CourseDataStore {
         // Assignment Calendar Items
         //
         
-        {
-            type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment0"]),
-            title: '0 - Introduction Slide',
-        },
         
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1a"]),
+            date: DateTime.fromISO('2023-01-05',),
+            title: '0 - Introduction Slide',
+        },
+
+        {
+            type: 'assignment',
+            date: DateTime.fromISO('2023-01-05'),
             title: '1a - Individual Brainstorm',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1b"]),
+            date: DateTime.fromISO('2023-01-11'),
             title: '1b - Group Proposals',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1b_rev"]),
+            date: DateTime.fromISO('2023-01-12'),
             title: '1b_rev - Group Proposals',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1c"]),
+            date: DateTime.fromISO('2023-01-16'),
             title: '1c - Finalized Proposal',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2a"]),
+            date: DateTime.fromISO('2023-01-17'),
             title: '2a - Project Ideation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2b"]),
+            date: DateTime.fromISO('2023-01-19'),
             title: '2b - Design Research Plan',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2c"]),
+            date: DateTime.fromISO('2023-01-23'),
             title: '2c - Design Research Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2d"]),
+            date: DateTime.fromISO('2023-01-26'),
             title: '2d - Design Research Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2e"]),
+            date: DateTime.fromISO('2023-01-30'),
             title: '2e - Task Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2f"]),
+            date: DateTime.fromISO('2023-02-01'),
             title: '2f - Design Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2f_rev"]),
+            date: DateTime.fromISO('2023-02-02'),
             title: '2f_rev - Design Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2g"]),
+            date: DateTime.fromISO('2023-02-06'),
             title: '2g - Design Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2p"]),
+            date: DateTime.fromISO('2023-02-08'),
             title: '2p - Presentation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3a"]),
+            date: DateTime.fromISO('2023-02-13'),
             title: '3a - Paper Prototype',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3b"]),
+            date: DateTime.fromISO('2023-02-14'),
             title: '3b - Heuristic Evaluation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3c"]),
+            date: DateTime.fromISO('2023-02-16'),
             title: '3c - Usability Testing Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3d"]),
+            date: DateTime.fromISO('2023-02-23'),
             title: '3d - Usability Testing Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3e"]),
+            date: DateTime.fromISO('2023-02-27'),
             title: '3e - Digital Mockup',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3p"]),
+            date: DateTime.fromISO('2023-03-01'),
             title: '3p - Presentation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4web"]),
+            date: DateTime.fromISO('2022-05-30'),
             title: '4web - Web Post',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4web_final"]),
+            date: DateTime.fromISO('2023-03-07'),
             title: '4web_final - Web Post',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4poster"]),
+            date: DateTime.fromISO('2023-03-08'),
             title: '4poster - Poster and Pitch',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4poster_final"]),
+            date: DateTime.fromISO('2023-03-09'),
             title: '4poster_final - Poster and Pitch',
         },
 
