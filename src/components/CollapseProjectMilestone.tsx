@@ -58,6 +58,7 @@ export const CollapseProjectMilestone: React.FunctionComponent<CollapseProjectMi
 
 
 /**
+ * TODO: Resolve existence of two versions of this.
  */
 export const CollapseProjectMilestoneNew: React.FunctionComponent<CollapseProjectMilestonePropsNew> = observer((props: CollapseProjectMilestonePropsNew) => {
     let heading = props.heading ? props.heading : props.assignmentTitle;

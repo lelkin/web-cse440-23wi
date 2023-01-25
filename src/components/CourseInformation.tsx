@@ -19,6 +19,8 @@ interface CourseInformationDueDateProps {
 
 /**
  * Assignment title
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 interface CourseInformationDueDateNewProps {
     assignmentTitle: keyof CourseDataStore;
@@ -53,6 +55,8 @@ export const CourseInformationDueDate: FunctionComponent<CourseInformationDueDat
 
 /**
  * Render a named assignment date from the course information.
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 export const CourseInformationDueDateNew: FunctionComponent<CourseInformationDueDateNewProps> = (props) => {
     const store = useAppStore();
@@ -85,6 +89,8 @@ interface CourseInformationLinkProps {
 
 /**
  * Assignment title
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 interface CourseInformationLinkNewProps {
     assignmentTitle: keyof CourseDataStore;
@@ -120,6 +126,8 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
 
 /**
  * Render a named link from the course information.
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 export const CourseInformationLinkNew: FunctionComponent<CourseInformationLinkNewProps> = (props) => {
     const store = useAppStore();
