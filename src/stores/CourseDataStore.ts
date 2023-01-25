@@ -598,7 +598,6 @@ export class CourseDataStore {
         // Assignment 0
         //
         {
-            type: 'assignment-item',
             title: '0 - Introduction Slide',
             assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.',
             assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157'
@@ -607,25 +606,22 @@ export class CourseDataStore {
         // Assignment 1
         //
         {
-            type: 'assignment-item',
             title: '1a - Individual Brainstorm',
             assignmentDueDate:  'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.',
             assignmentLink: "https://canvas.uw.edu/courses/1612132/assignments/7941158"
         },
         {
-            type: 'assignment-item',
             title: '1b - Group Proposals',
             assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.',
             assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/8044498'
         },
         {
-            type: 'assignment-item',
+        
             title: '1b_rev - Group Proposals',
             assignmentDueDate: 'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.',
             assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160'
         },
         {
-            type: 'assignment-item',
             title: '1c - Finalized Proposal',
             assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.',
             assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161'

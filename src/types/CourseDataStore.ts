@@ -5,7 +5,6 @@ export type DueDate = string | null; // e.g. 'Uploaded 3:00pm ' + formatDateStri
 export type TimeAndLocation = string; // e.g. '10:30 - 11:20 | MGH 058'
 
 export type AssignmentItem = {
-    type: 'assignment-item',
     title: string,
     assignmentDueDate: DueDate,
     assignmentLink: Link
