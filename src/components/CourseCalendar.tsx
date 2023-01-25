@@ -8,17 +8,18 @@ import * as React from 'react';
 
 import { useAppStore } from '../stores/AppStoreProvider';
 import {
-    CalendarDate,
-    CalendarWeek,
     AssignmentCalendarItem,
     AwayCalendarItem,
-    BaseCalendarItemTimeAndLocation,
+    BaseCalendarItemTimeAndLocations,
+    CalendarDate,
+    CalendarItem,
+    CalendarWeek,
     EventCalendarItem,
     HolidayCalendarItem,
     LectureCalendarItem,
     OfficeHourCalendarItem,
-    StudioCalendarItem, CalendarItem,
-} from 'src/stores/CourseCalendarStore';
+    StudioCalendarItem,
+} from 'src/types/CourseDataStore';
 
 
 const DATE_FORMAT = 'EEE MMM d';
@@ -60,7 +61,7 @@ function renderAssignmentCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'assignment'
                     ) as AssignmentCalendarItem[]
                 )
@@ -91,7 +92,7 @@ function renderAwayCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'away'
                     ) as AwayCalendarItem[]
                 )
@@ -121,7 +122,7 @@ function renderEventCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'event'
                     ) as EventCalendarItem[]
                 )
@@ -153,7 +154,7 @@ function renderHolidayCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'holiday'
                     ) as HolidayCalendarItem[]
                 )
@@ -183,7 +184,7 @@ function renderLectureCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'lecture'
                     ) as LectureCalendarItem[]
                 )
@@ -205,20 +206,18 @@ function renderLectureCalendarItems(calendarDate: CalendarDate) {
                                     [<a href={calendarItem.slides}>slides</a>]
                                 </React.Fragment>
                             }
-                            {(calendarItem.slides != undefined && calendarItem.video != undefined) &&
+                            {   /* TODO: Consider linking individual videos when easy to maintain/publish
+                                (calendarItem.slides != undefined && calendarItem.video != undefined) &&
                                 <React.Fragment>
                                     {" "}
                                 </React.Fragment>
                             }
-                            {calendarItem.video != undefined &&
+                            {
+                                calendarItem.video != undefined &&
                                 <React.Fragment>
                                     [<a href={calendarItem.video}>video</a>]
                                 </React.Fragment>
-                            }
-                            {(calendarItem.slides != undefined || calendarItem.video != undefined) &&
-                                <React.Fragment>
-                                    <br/>
-                                </React.Fragment>
+                                */
                             }
                         </Box>
                     )
@@ -235,7 +234,7 @@ function renderOfficeHourCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'officehour'
                     ) as OfficeHourCalendarItem[]
                 )
@@ -267,7 +266,7 @@ function renderSectionCalendarItems(calendarDate: CalendarDate) {
         <React.Fragment>
             {
                 (
-                    store.courseCalendar.getCalendarItems(
+                    store.courseDataStore.getCalendarItems(
                         calendarDate, 'studio'
                     ) as StudioCalendarItem[]
                 )
@@ -289,15 +288,18 @@ function renderSectionCalendarItems(calendarDate: CalendarDate) {
                                     [<a href={calendarItem.slides}>slides</a>]
                                 </React.Fragment>
                             }
-                            {(calendarItem.slides != undefined && calendarItem.video != undefined) &&
+                            {   /* TODO: Consider linking individual videos when easy to maintain/publish
+                                (calendarItem.slides != undefined && calendarItem.video != undefined) &&
                                 <React.Fragment>
                                     {" "}
                                 </React.Fragment>
                             }
-                            {calendarItem.video != undefined &&
+                            }
+                                calendarItem.video != undefined &&
                                 <React.Fragment>
                                     [<a href={calendarItem.video}>video</a>]
                                 </React.Fragment>
+                                */
                             }
                         </Box>
                     )
@@ -307,7 +309,7 @@ function renderSectionCalendarItems(calendarDate: CalendarDate) {
     )
 }
 
-function renderTimeAndLocation(calendarItem: BaseCalendarItemTimeAndLocation) {
+function renderTimeAndLocation(calendarItem: BaseCalendarItemTimeAndLocations) {
     return <React.Fragment>
         {'timeAndLocation' in calendarItem &&
             <React.Fragment>
@@ -406,7 +408,7 @@ export const CourseCalendar: React.FunctionComponent = () => {
     return (
         <React.Fragment>
             <Stack spacing={2}>
-                {store.courseCalendar.calendarWeeks.map(calendarWeekCurrent => {
+                {store.courseDataStore.calendarWeeks.map(calendarWeekCurrent => {
                     return (
                         <React.Fragment
                             key={keyCalendarWeek(calendarWeekCurrent)}

@@ -1,5 +1,9 @@
 # IDE configuration
 .idea
+.vscode
+
+# OS files
+.DS_Store
 
 # Build files
 /build

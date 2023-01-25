@@ -18,19 +18,26 @@ import {
 
 import {
     CourseInformationDueDate,
+    CourseInformationDueDateNew,
 } from 'src/components/CourseInformation';
 
 import {
-    CourseInformationStore
-} from "src/stores/CourseInformationStore";
+    CourseDataStore
+} from "src/stores/CourseDataStore";
 
 //
 // Properties
 //
 interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
     heading: string,
-    dueDateName: keyof CourseInformationStore,
-    revisionDueDateName?: keyof CourseInformationStore,
+    dueDateName: keyof CourseDataStore,
+    revisionDueDateName?: keyof CourseDataStore,
+}
+
+interface CollapseProjectMilestonePropsNew extends React.PropsWithChildren<{}> {
+    heading: string,
+    assignmentTitle: keyof CourseDataStore,
+    revisionTitle?: keyof CourseDataStore,
 }
 
 /**
@@ -49,4 +56,24 @@ export const CollapseProjectMilestone: React.FunctionComponent<CollapseProjectMi
     </CollapseWithHeader>
 });
 
-export default CollapseProjectMilestone;
+
+/**
+ * TODO: Resolve existence of two versions of this.
+ */
+export const CollapseProjectMilestoneNew: React.FunctionComponent<CollapseProjectMilestonePropsNew> = observer((props: CollapseProjectMilestonePropsNew) => {
+    let heading = props.heading ? props.heading : props.assignmentTitle;
+    
+    return <CollapseWithHeader header={
+        <Stack>
+            <h3 id={anchorText(heading)}>{heading}</h3>
+            <p><CourseInformationDueDateNew assignmentTitle={props.assignmentTitle} /></p>
+            {!!props.revisionTitle && (
+                <p>Revision: <CourseInformationDueDateNew assignmentTitle={props.assignmentTitle} /></p>
+            )}
+        </Stack>
+    }>
+        {props.children}
+    </CollapseWithHeader>
+});
+
+//export default CollapseProjectMilestoneNew;
