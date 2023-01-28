@@ -29,6 +29,7 @@ export function formatDateString(dateString: string): string {
     return DateTime.fromISO(dateString).toLocaleString(DATE_FORMAT_OPTIONS);
 }
 
+// TODO: Resolve existence of two versions of this.
 export function formatDateStringNew(dueDate: DateTime): string {
     return dueDate.toLocaleString(DATE_FORMAT_OPTIONS);
 }
