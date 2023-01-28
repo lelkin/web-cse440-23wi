@@ -17,27 +17,27 @@ import {
 } from 'src/common/GeneratedAnchor';
 
 import {
-    CourseInformationDueDate,
-    CourseInformationDueDateNew,
+    AssignmentDueDate,
+    AssignmentDueDateNew,
 } from 'src/components/CourseInformation';
 
 import {
-    CourseDataStore
-} from "src/stores/CourseDataStore";
+    AssignmentStore
+} from "src/stores/AssignmentStore";
 
 //
 // Properties
 //
 interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
     heading: string,
-    dueDateName: keyof CourseDataStore,
-    revisionDueDateName?: keyof CourseDataStore,
+    dueDateName: keyof AssignmentStore,
+    revisionDueDateName?: keyof AssignmentStore,
 }
 
 interface CollapseProjectMilestonePropsNew extends React.PropsWithChildren<{}> {
     heading: string,
-    assignmentTitle: keyof CourseDataStore,
-    revisionTitle?: keyof CourseDataStore,
+    assignmentTitle: keyof AssignmentStore,
+    revisionTitle?: keyof AssignmentStore,
 }
 
 /**
@@ -46,9 +46,9 @@ export const CollapseProjectMilestone: React.FunctionComponent<CollapseProjectMi
     return <CollapseWithHeader header={
         <Stack>
             <h3 id={anchorText(props.heading)}>{props.heading}</h3>
-            <p><CourseInformationDueDate dueDateName={props.dueDateName} /></p>
+            <p><AssignmentDueDate dueDateName={props.dueDateName} /></p>
             {!!props.revisionDueDateName && (
-                <p>Revision: <CourseInformationDueDate dueDateName={props.revisionDueDateName} /></p>
+                <p>Revision: <AssignmentDueDate dueDateName={props.revisionDueDateName} /></p>
             )}
         </Stack>
     }>
@@ -65,9 +65,9 @@ export const CollapseProjectMilestoneNew: React.FunctionComponent<CollapseProjec
     return <CollapseWithHeader header={
         <Stack>
             <h3 id={anchorText(heading)}>{heading}</h3>
-            <p><CourseInformationDueDateNew assignmentTitle={props.assignmentTitle} /></p>
+            <p><AssignmentDueDateNew assignmentTitle={props.assignmentTitle} /></p>
             {!!props.revisionTitle && (
-                <p>Revision: <CourseInformationDueDateNew assignmentTitle={props.assignmentTitle} /></p>
+                <p>Revision: <AssignmentDueDateNew assignmentTitle={props.assignmentTitle} /></p>
             )}
         </Stack>
     }>
