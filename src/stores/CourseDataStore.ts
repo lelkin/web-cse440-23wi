@@ -1,11 +1,11 @@
 import { useAppStore } from 'src/stores/AppStoreProvider';
 
 import {
-    AssignmentItem,
+    //AssignmentItem,
     CalendarDate,
     CalendarItem,
     CalendarWeek,
-    DueDate,
+    //DueDate,
     Link,
     TimeAndLocation
 } from 'src/types/CourseDataStore';
@@ -16,6 +16,7 @@ import {
     DateTimeFormatOptions,
 } from 'luxon';
 import {ProjectSamplesStore, ProjectSamplesStoreImpl} from "src/stores/ProjectSamplesStore";
+import {AssignmentStore} from "src/stores/AssignmentStore";
 
 // info store
 const DATE_FORMAT_OPTIONS = {
@@ -24,8 +25,13 @@ const DATE_FORMAT_OPTIONS = {
     weekday: 'long'
 } as DateTimeFormatOptions;
 
-function formatDateString(dateString: string): string {
+export function formatDateString(dateString: string): string {
     return DateTime.fromISO(dateString).toLocaleString(DATE_FORMAT_OPTIONS);
+}
+
+// TODO: Resolve existence of two versions of this.
+export function formatDateStringNew(dueDate: DateTime): string {
+    return dueDate.toLocaleString(DATE_FORMAT_OPTIONS);
 }
 // end info store
 
@@ -47,35 +53,6 @@ const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 6
 const OFFICE_HOUR_SIMONA_TIME_AND_LOCATION: TimeAndLocation = '2:30 - 3:30 | CSE 3rd Floor Breakout';
 
 
-
-
-// TODO: Automatically generate these from course start date
-const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
-    "assignment0" : '2023-01-05',
-    "assignment1a" : '2023-01-05',
-    "assignment1b": '2023-01-11',
-    "assignment1b_rev": '2023-01-12',
-    "assignment1c": '2023-01-16',
-    "assignment2a": '2023-01-17',
-    "assignment2b": '2023-01-19',
-    "assignment2c": '2023-01-23',
-    "assignment2d": '2023-01-26',
-    "assignment2e": '2023-01-30',
-    "assignment2f": '2023-02-01',
-    "assignment2f_rev": '2023-02-02',
-    "assignment2g": '2023-02-06',
-    "assignment2p": '2023-02-08',
-    "assignment3a": '2023-02-13',
-    "assignment3b": '2023-02-14',
-    "assignment3c": '2023-02-16',
-    "assignment3d": '2023-02-23',
-    "assignment3e": '2023-02-27',
-    "assignment3p": '2023-03-01',
-    "assignment4web": '2022-05-30',
-    "assignment4web_final": '2023-03-07',
-    "assignment4poster": '2023-03-08',
-    "assignment4poster_final": '2023-03-09'
-};
 
 
 export class CourseDataStore {
@@ -304,125 +281,134 @@ export class CourseDataStore {
         // Assignment Calendar Items
         //
         
+        
+        // {
+        //     type: 'assignment',
+        //     date: DateTime.fromISO('2023-01-05'),
+        //     title: '0 - Introduction Slide',
+        // },
+
+        // TODO: Thoughts on formatting date like this?
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment0"]),
+            date: this.datesOfInstruction.start.plus({days: 3}),
             title: '0 - Introduction Slide',
         },
-        
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1a"]),
+            //date: DateTime.fromISO('2023-01-05'),
+            date: this.datesOfInstruction.start.plus({days: 3}),
             title: '1a - Individual Brainstorm',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1b"]),
+            //date: DateTime.fromISO('2023-01-11'),
+            date: this.datesOfInstruction.start.plus({days:9}),
             title: '1b - Group Proposals',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1b_rev"]),
+            date: DateTime.fromISO('2023-01-12'),
             title: '1b_rev - Group Proposals',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment1c"]),
+            date: DateTime.fromISO('2023-01-16'),
             title: '1c - Finalized Proposal',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2a"]),
+            date: DateTime.fromISO('2023-01-17'),
             title: '2a - Project Ideation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2b"]),
+            date: DateTime.fromISO('2023-01-19'),
             title: '2b - Design Research Plan',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2c"]),
+            date: DateTime.fromISO('2023-01-23'),
             title: '2c - Design Research Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2d"]),
+            date: DateTime.fromISO('2023-01-26'),
             title: '2d - Design Research Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2e"]),
+            date: DateTime.fromISO('2023-01-30'),
             title: '2e - Task Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2f"]),
+            date: DateTime.fromISO('2023-02-01'),
             title: '2f - Design Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2f_rev"]),
+            date: DateTime.fromISO('2023-02-02'),
             title: '2f_rev - Design Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2g"]),
+            date: DateTime.fromISO('2023-02-06'),
             title: '2g - Design Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment2p"]),
+            date: DateTime.fromISO('2023-02-08'),
             title: '2p - Presentation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3a"]),
+            date: DateTime.fromISO('2023-02-13'),
             title: '3a - Paper Prototype',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3b"]),
+            date: DateTime.fromISO('2023-02-14'),
             title: '3b - Heuristic Evaluation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3c"]),
+            date: DateTime.fromISO('2023-02-16'),
             title: '3c - Usability Testing Check-In',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3d"]),
+            date: DateTime.fromISO('2023-02-23'),
             title: '3d - Usability Testing Review',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3e"]),
+            date: DateTime.fromISO('2023-02-27'),
             title: '3e - Digital Mockup',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment3p"]),
+            date: DateTime.fromISO('2023-03-01'),
             title: '3p - Presentation',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4web"]),
+            date: DateTime.fromISO('2022-05-30'),
             title: '4web - Web Post',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4web_final"]),
+            date: DateTime.fromISO('2023-03-07'),
             title: '4web_final - Web Post',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4poster"]),
+            date: DateTime.fromISO('2023-03-08'),
             title: '4poster - Poster and Pitch',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO(ASSIGNMENT_DUE_DATES["assignment4poster_final"]),
+            date: DateTime.fromISO('2023-03-09'),
             title: '4poster_final - Poster and Pitch',
         },
 
@@ -585,175 +571,17 @@ export class CourseDataStore {
         )
     }
 
-
-
-    //
-    // Assignments
-    //
-
-    // TODO: Change these to new AsssignmentItem type.
-
-    assignmentItems: AssignmentItem[] = [
-        //
-        // Assignment 0
-        //
-        {
-            type: 'assignment-item',
-            title: '0 - Introduction Slide',
-            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.',
-            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157'
-        },
-        //
-        // Assignment 1
-        //
-        {
-            type: 'assignment-item',
-            title: '1a - Individual Brainstorm',
-            assignmentDueDate:  'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.',
-            assignmentLink: "https://canvas.uw.edu/courses/1612132/assignments/7941158"
-        },
-        {
-            type: 'assignment-item',
-            title: '1b - Group Proposals',
-            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.',
-            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/8044498'
-        },
-        {
-            type: 'assignment-item',
-            title: '1b_rev - Group Proposals',
-            assignmentDueDate: 'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.',
-            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160'
-        },
-        {
-            type: 'assignment-item',
-            title: '1c - Finalized Proposal',
-            assignmentDueDate: 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.',
-            assignmentLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161'
-        },
-        
-    ];
-
-
-    getAssignmentItemByTitle(itemTitle: string): AssignmentItem | undefined {
+    getCalendarItemsByTitle(itemTitle: string, itemType: string): CalendarItem | undefined {
         const store = useAppStore();
 
-        return store.courseDataStore.assignmentItems.find(
-            function(assignmentItem) {
-                return assignmentItem.title == itemTitle;
+        return store.courseDataStore.calendarItems.find(
+            function(calendarItem) {
+                return (calendarItem.title == itemTitle && calendarItem.type == itemType);
             }
         )
     }
 
-    // //
-    // // // Assignment 0
-    // // //
-    // dueDateAssignment0: dueDate =
-    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.';
-    // linkCanvasAssignment0: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941157';
-
-    // //
-    // // Assignment 1
-    // //
-    // dueDateAssignment1a: dueDate =
-    //     'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1a"]) + '.';
-    // linkCanvasAssignment1a: link = "https://canvas.uw.edu/courses/1612132/assignments/7941158";
-
-    // dueDateAssignment1b: dueDate =
-    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b"]) + '.';
-    // linkCanvasAssignment1b: link = 'https://canvas.uw.edu/courses/1612132/assignments/8044498';
-    // dueDateAssignment1b_revised: dueDate =
-    //     'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1b_rev"]) + '.';
-    // linkCanvasAssignment1b_revised: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941160';
-
-    // dueDateAssignment1c: dueDate =
-    //     'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment1c"]) + '.';
-    // linkCanvasAssignment1c: link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
-
-
-    //
-    // Assignment 2
-    //
-    dueDateAssignment2a: DueDate =
-        'Completed in class ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2a"]) + '.';
-    linkCanvasAssignment2a: Link = null;
-
-    dueDateAssignment2b: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2b"]) + '.';
-    linkCanvasAssignment2b: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941162';
-
-    dueDateAssignment2c: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2c"]) + '.';
-    linkCanvasAssignment2c: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941161';
-
-    dueDateAssignment2d: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2d"]) + '.';
-    linkCanvasAssignment2d: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941164';
-
-    dueDateAssignment2e: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2e"]) + '.';
-    linkCanvasAssignment2e: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941165';
-
-    dueDateAssignment2f: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2f"]) + '.';
-    linkCanvasAssignment2f: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941166';
-    dueDateAssignment2f_revised: DueDate =
-        'Uploaded 8:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2f_rev"]) + '.';
-    linkCanvasAssignment2f_revised: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941167';
-
-    dueDateAssignment2g: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2g"]) + '.';
-    linkCanvasAssignment2g: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941168';
-
-    dueDateAssignment2p: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment2p"]) + '.';
-    linkCanvasAssignment2p: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941169';
-
-    //
-    // Assignment 3
-    //
-    dueDateAssignment3a: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3a"]) + '.';
-    linkCanvasAssignment3a: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941170';
-
-    dueDateAssignment3b: DueDate =
-        'Submitted with Assignment 3c.';
-
-    dueDateAssignment3c: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3c"]) + '.';
-    linkCanvasAssignment3c: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941172';
-
-    dueDateAssignment3d: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3d"]) + '.';
-    linkCanvasAssignment3d: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941173';
-
-    dueDateAssignment3e: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3e"]) + '.';
-    linkCanvasAssignment3e: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941174';
-
-    dueDateAssignment3p: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment3p"]) + '.';
-    linkCanvasAssignment3p: Link = 'https://canvas.uw.edu/courses/1612132/assignments/7941175';
-
-    //
-    // Assignment 4
-    //
-    dueDateAssignment4web: DueDate =
-        'Uploaded 11:59pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4web"]) + '.';
-    linkCanvasAssignment4web: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7332263';
-
-    dueDateAssignment4web_final: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4web_final"]) + '.';
-    linkCanvasAssignment4web_final: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398746';
-
-    dueDateAssignment4poster: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster"]) + '.';
-    linkCanvasAssignment4poster: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398750';
-
-    dueDateAssignment4poster_final: DueDate =
-        'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + '.';
-    linkCanvasAssignment4poster_final: Link = 'https://canvas.uw.edu/courses/1545349/assignments/7398752';
-
-    dueDateAssignment4poster_session: DueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
-
     projectSamplesStore: ProjectSamplesStore = new ProjectSamplesStoreImpl();
+
+    assignmentStore: AssignmentStore = new AssignmentStore(this.calendarItems);
 }
