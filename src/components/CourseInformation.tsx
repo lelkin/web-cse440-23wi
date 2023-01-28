@@ -133,10 +133,14 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
     
     // Check this because TypeScript doesn't ensure in MDX files
     if (!(props.linkName in store.courseDataStore)) {
-        throw new Error('linkName must be in store.courseDataStore');
+        throw new Error(
+            `linkName '${props.linkName}' must be in store.courseDataStore.`
+        );
     }
     if (!(props.linkName.startsWith('link'))) {
-        throw new Error('linkName must start with "link".');
+        throw new Error(
+            `linkName '${props.linkName}' must start with "link".`
+        );
     }
 
     const link = store.courseDataStore[props.linkName] as string;
@@ -160,10 +164,14 @@ export const AssignmentLink: FunctionComponent<AssignmentLinkProps> = (props) =>
     
     // Check this because TypeScript doesn't ensure in MDX files
     if (!(props.linkName in store.courseDataStore.assignmentStore)) {
-        throw new Error('linkName: ' + props.linkName + ' must be in store.courseDataStore.assignmentStore');
+        throw new Error(
+            `linkName '${props.linkName}' must be in store.courseDataStore.assignmentStore.`
+        );
     }
     if (!(props.linkName.startsWith('link'))) {
-        throw new Error('linkName must start with "link".');
+        throw new Error(
+            `linkName '${props.linkName}' must start with "link".`
+        );
     }
 
     const link = store.courseDataStore.assignmentStore[props.linkName] as string;
