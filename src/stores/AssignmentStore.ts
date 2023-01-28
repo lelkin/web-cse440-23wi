@@ -149,8 +149,8 @@ export class AssignmentStore {
 
     dueDateAssignment4poster_session: DueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
 
-    // Assign values for assignmentDueDate? from courseCalendar when instantiated
-    // TODO: I like this better than going through courseDataStore to courseCalendarStore becuase the assignment title, link, and date are all in the same object, but I'm happy to change it if you don't agree.
+    // Assign values for assignmentDueDate from courseCalendar when instantiated
+    // TODO: I like this better than going through courseDataStore to courseCalendarStore becuase the assignment title, link, and date are all in the same assignment item, but I'm happy to change it if you don't agree.
     // TODO: Should assignments be allowed to have multiple due dates?
     // TODO: How to handle due date to be added? If it's in the course calendar, it has a date, right?
     constructor(calendarItems: CalendarItem[]) {
@@ -196,5 +196,5 @@ export class AssignmentStore {
             }
         )
     }
-    
+
 }
