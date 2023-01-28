@@ -195,14 +195,14 @@ export class CourseDataStore {
             date: DateTime.fromISO('2023-01-24'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Task Analysis',
-            // slides: 'https://canvas.uw.edu/files/91098921/',
+            slides: 'https://canvas.uw.edu/files/101151132/',
         },
         {
             type: 'lecture',
             date: DateTime.fromISO('2023-01-26'),
             timeAndLocation: LECTURE_TIME_AND_LOCATION,
             title: 'Models and Human Performance',
-            // slides: 'https://canvas.uw.edu/files/91192666/',
+            slides: 'https://canvas.uw.edu/files/101252848/',
         },
         {
             type: 'lecture',

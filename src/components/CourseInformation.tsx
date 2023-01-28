@@ -15,13 +15,14 @@ import { DateTime } from 'luxon';
 /**
  * Name of the assignment date.
  */
-// TODO: This will get removed once all assignments changed to new format.
 interface AssignmentDueDateProps {
     dueDateName: keyof AssignmentStore;
 }
 
 /**
  * Assignment title
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 interface AssignmentDueDateNewProps {
     assignmentTitle: AssignmentItem["title"];
@@ -57,6 +58,8 @@ export const AssignmentDueDate: FunctionComponent<AssignmentDueDateProps> = (pro
 
 /**
  * Render a named assignment date from the course information.
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 export const AssignmentDueDateNew: FunctionComponent<AssignmentDueDateNewProps> = (props) => {
     const store = useAppStore();
@@ -99,6 +102,8 @@ interface AssignmentLinkProps {
 
 /**
  * Assignment title
+ *
+ * TODO: Resolve existence of two versions of this.
  */
 interface AssignmentLinkNewProps {
     assignmentTitle: AssignmentItem["title"];
@@ -107,8 +112,9 @@ interface AssignmentLinkNewProps {
 
 /**
  * Render a named link from the course information (e.g., quantified self paper)
+ * 
+ * Note: Need this for non-assignment links
  */
-// Note: Need this for non-assignment links
 export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps> = (props) => {
     const store = useAppStore();
     
@@ -170,6 +176,8 @@ export const AssignmentLink: FunctionComponent<AssignmentLinkProps> = (props) =>
 
 /**
  * Render a named link from the new format of assignments
+ * 
+ * TODO: Resolve existence of two versions of this.
  */
 export const AssignmentLinkNew: FunctionComponent<AssignmentLinkNewProps> = (props) => {
     const store = useAppStore();
