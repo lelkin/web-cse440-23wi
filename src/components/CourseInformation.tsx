@@ -108,6 +108,7 @@ interface AssignmentLinkNewProps {
 /**
  * Render a named link from the course information (e.g., quantified self paper)
  */
+// Note: Need this for non-assignment links
 export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps> = (props) => {
     const store = useAppStore();
     

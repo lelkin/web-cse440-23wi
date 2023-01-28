@@ -22,7 +22,8 @@ import {
 } from 'src/components/CourseInformation';
 
 import {
-    AssignmentStore
+    AssignmentStore,
+    AssignmentItem
 } from "src/stores/AssignmentStore";
 
 //
@@ -36,8 +37,8 @@ interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
 
 interface CollapseProjectMilestonePropsNew extends React.PropsWithChildren<{}> {
     heading: string,
-    assignmentTitle: keyof AssignmentStore,
-    revisionTitle?: keyof AssignmentStore,
+    assignmentTitle: AssignmentItem["title"],
+    revisionTitle?: AssignmentItem["title"],
 }
 
 /**
