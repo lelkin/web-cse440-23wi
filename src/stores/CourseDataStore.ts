@@ -308,20 +308,27 @@ export class CourseDataStore {
         //
         
         
+        // {
+        //     type: 'assignment',
+        //     date: DateTime.fromISO('2023-01-05'),
+        //     title: '0 - Introduction Slide',
+        // },
+        // TODO: Thoughts on formatting date like this?
         {
             type: 'assignment',
-            date: DateTime.fromISO('2023-01-05',),
+            date: this.datesOfInstruction.start.plus({days: 3}),
             title: '0 - Introduction Slide',
         },
-
         {
             type: 'assignment',
-            date: DateTime.fromISO('2023-01-05'),
+            //date: DateTime.fromISO('2023-01-05'),
+            date: this.datesOfInstruction.start.plus({days: 3}),
             title: '1a - Individual Brainstorm',
         },
         {
             type: 'assignment',
-            date: DateTime.fromISO('2023-01-11'),
+            //date: DateTime.fromISO('2023-01-11'),
+            date: this.datesOfInstruction.start.plus({days:9}),
             title: '1b - Group Proposals',
         },
         {
