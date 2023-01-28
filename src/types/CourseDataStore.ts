@@ -4,12 +4,6 @@ export type Link = string | null;
 export type DueDate = string | null; // e.g. 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.'
 export type TimeAndLocation = string; // e.g. '10:30 - 11:20 | MGH 058'
 
-// export type AssignmentItem = {
-//     title: string,
-//     assignmentDueDate: DueDate,
-//     assignmentLink: Link
-// }
-
 export type CalendarDate = {
     date: DateTime
 }
