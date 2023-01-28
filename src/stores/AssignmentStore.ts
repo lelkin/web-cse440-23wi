@@ -7,11 +7,38 @@ import {
 } from 'src/types/CourseDataStore';
 
 import {
-    formatDateString,
-    ASSIGNMENT_DUE_DATES 
+    formatDateString
 } from 'src/stores/CourseDataStore';
 import { DateTime } from 'luxon';
 
+
+// // TODO: Automatically generate these from course start date
+export const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
+    "assignment0" : '2023-01-05',
+    "assignment1a" : '2023-01-05',
+    "assignment1b": '2023-01-11',
+    "assignment1b_rev": '2023-01-12',
+    "assignment1c": '2023-01-16',
+    "assignment2a": '2023-01-17',
+    "assignment2b": '2023-01-19',
+    "assignment2c": '2023-01-23',
+    "assignment2d": '2023-01-26',
+    "assignment2e": '2023-01-30',
+    "assignment2f": '2023-02-01',
+    "assignment2f_rev": '2023-02-02',
+    "assignment2g": '2023-02-06',
+    "assignment2p": '2023-02-08',
+    "assignment3a": '2023-02-13',
+    "assignment3b": '2023-02-14',
+    "assignment3c": '2023-02-16',
+    "assignment3d": '2023-02-23',
+    "assignment3e": '2023-02-27',
+    "assignment3p": '2023-03-01',
+    "assignment4web": '2022-05-30',
+    "assignment4web_final": '2023-03-07',
+    "assignment4poster": '2023-03-08',
+    "assignment4poster_final": '2023-03-09'
+};
 
 export type AssignmentItem = {
     title: string,
