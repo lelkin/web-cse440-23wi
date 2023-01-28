@@ -9,12 +9,13 @@ import GeneratedLink from '../common/GeneratedLink';
 
 import { useAppStore } from '../stores/AppStoreProvider';
 import { CourseDataStore, formatDateStringNew } from "../stores/CourseDataStore";
-import { AssignmentStore } from "../stores/AssignmentStore";
+import { AssignmentItem, AssignmentStore } from "../stores/AssignmentStore";
 import { DateTime } from 'luxon';
 
 /**
  * Name of the assignment date.
  */
+// TODO: This will get removed once all assignments changed to new format.
 interface AssignmentDueDateProps {
     dueDateName: keyof AssignmentStore;
 }
@@ -23,7 +24,7 @@ interface AssignmentDueDateProps {
  * Assignment title
  */
 interface AssignmentDueDateNewProps {
-    assignmentTitle: keyof AssignmentStore;
+    assignmentTitle: AssignmentItem["title"];
 }
 
 /**
@@ -53,28 +54,6 @@ export const AssignmentDueDate: FunctionComponent<AssignmentDueDateProps> = (pro
     }
 }
 
-// /**
-//  * Render a named assignment date from the course information.
-//  */
-// export const AssignmentDueDateNew: FunctionComponent<AssignmentDueDateNewProps> = (props) => {
-//     const store = useAppStore();
-
-//     const assignmentItem = store.courseDataStore.assignmentStore.getAssignmentItemByTitle(props.assignmentTitle);
-
-//     if (typeof assignmentItem == 'undefined') {
-//         throw new Error(
-//             `Assignment '${props.assignmentTitle}' must be in store.courseDataStore.`
-//         );
-//     }
-
-//     const dueDateText = assignmentItem.assignmentDueDate;
-
-//     if (typeof dueDateText == 'string') {
-//         return <span>{dueDateText}</span>;
-//     } else {
-//         return <Box component="span" sx={{color: "red"}}>Due date to be added</Box>;
-//     }
-// }
 
 /**
  * Render a named assignment date from the course information.
@@ -112,6 +91,7 @@ interface CourseInformationLinkProps {
 /**
  * Name of the link.
  */
+// TODO: This will get removed once all assignments changed to new format
 interface AssignmentLinkProps {
     linkName: keyof AssignmentStore;
     anchorText?: string;
@@ -121,7 +101,7 @@ interface AssignmentLinkProps {
  * Assignment title
  */
 interface AssignmentLinkNewProps {
-    assignmentTitle: keyof AssignmentStore;
+    assignmentTitle: AssignmentItem["title"];
     anchorText?: string;
 }
 
