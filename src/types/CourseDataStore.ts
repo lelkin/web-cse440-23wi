@@ -1,6 +1,6 @@
 import {DateTime} from "luxon";
 
-export type Link = string | null;
+export type Link = string;
 export type DueDate = string | null; // e.g. 'Uploaded 3:00pm ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment0"]) + '.'
 export type TimeAndLocation = string; // e.g. '10:30 - 11:20 | MGH 058'
 

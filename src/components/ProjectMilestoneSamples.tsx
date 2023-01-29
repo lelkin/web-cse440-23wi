@@ -18,7 +18,7 @@ interface ProjectMilestoneSamplesProps {
 export const ProjectMilestoneSamples: React.FunctionComponent<ProjectMilestoneSamplesProps> = (props) => {
     const store = useAppStore();
 
-    // Validate props
+    // Validate props, TypeScript does not validate in MDX
     assertProjectSampleMilestoneKey(props.milestone);
 
     return (

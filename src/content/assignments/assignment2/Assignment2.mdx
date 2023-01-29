@@ -13,9 +13,8 @@ import {
 } from 'src/components/ProjectMilestoneSamples';
 
 import {
-    AssignmentDueDate,
-    AssignmentLink,
-} from 'src/components/CourseInformation';
+    AssignmentCanvasLink
+} from "src/components/AssignmentCanvasLink";
 
 import ClarityAndPresentationReference from 'src/content/assignments/ClarityAndPresentationReference.mdx'
 import ContributionStatementReference from 'src/content/assignments/ContributionStatementReference.mdx'
@@ -43,7 +42,7 @@ This is a group assignment, consisting of eight milestones.
   * ASSIGNMENT 2A
   *
   */}
-<CollapseProjectMilestone heading='2a: Project Ideation' dueDateName='dueDateAssignment2a'>
+<CollapseProjectMilestone milestone={'assignment2a'}>
 
 The goal of this milestone is to begin thinking about how to plan effective design research to inform your design process.
 
@@ -83,7 +82,7 @@ There is no submission for this milestone.
   * ASSIGNMENT 2B
   *
   */}
-<CollapseProjectMilestone heading='2b: Design Research Plan' dueDateName='dueDateAssignment2b'>
+<CollapseProjectMilestone milestone={'assignment2b'}>
 
 The goal of this milestone is to develop an initial plan for your design research,
 encouraging you to work through details of how you would conduct that research
@@ -133,7 +132,7 @@ No more than two pages of text in PDF format.
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2b' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2b'} /></p>
 
 #### In Class
 
@@ -162,7 +161,7 @@ This milestone will be graded on a scale of __10 points__:
   * ASSIGNMENT 2C
   *
   */}
-<CollapseProjectMilestone heading='2c: Design Research Check-In' dueDateName='dueDateAssignment2c'>
+<CollapseProjectMilestone milestone={'assignment2c'}>
 
 The goal of this milestone is to begin your design research,
 reflect on what you observe and learn,
@@ -204,7 +203,7 @@ No more than one page of text in PDF format.
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2c' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2c'} /></p>
 
 #### In Class
 
@@ -233,7 +232,7 @@ This milestone will be graded on a scale of __8 points__:
   * ASSIGNMENT 2D
   *
   */}
-<CollapseProjectMilestone heading='2d: Design Research Review' dueDateName='dueDateAssignment2d'>
+<CollapseProjectMilestone milestone={'assignment2d'}>
 
 The goal of this milestone is to reflect on what you observed and learned in your design research,
 organizing observations around themes and developing insights into tasks that can help inform your design.
@@ -302,7 +301,7 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2d' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2d'} /></p>
 
 #### In Class
 
@@ -332,7 +331,7 @@ This milestone will be graded on a scale of __13 points__:
   * ASSIGNMENT 2E
   *
   */}
-<CollapseProjectMilestone heading='2e: Task Review' dueDateName='dueDateAssignment2e'>
+<CollapseProjectMilestone milestone={'assignment2e'}>
 
 The goal of this milestone is to develop a set of tasks that you will explore in a set of potential designs.
 
@@ -374,7 +373,7 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2e' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2e'} /></p>
 
 #### In Class
 
@@ -401,7 +400,7 @@ This milestone will be graded on a scale of __8 points__:
   * ASSIGNMENT 2F
   *
   */}
-<CollapseProjectMilestone heading='2f: Design Check-In ("3x4")' dueDateName='dueDateAssignment2f' revisionDueDateName='dueDateAssignment2f_revised'>
+<CollapseProjectMilestone milestone={'assignment2f'} revisionMilestone={'assignment2f_rev'}>
 
 The goal of this milestone is to develop distinct design ideas that address your tasks.
 
@@ -441,11 +440,11 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2f' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2f'} /></p>
 
 After receiving critique on Thursday, submit an updated version via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2f_revised' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2f_rev'} /></p>
 
 #### In Class
 
@@ -473,7 +472,7 @@ This milestone will be graded on a scale of __10 points__:
   * ASSIGNMENT 2G
   *
   */}
-<CollapseProjectMilestone heading='2g: Design Review ("1x2")' dueDateName='dueDateAssignment2g'>
+<CollapseProjectMilestone milestone={'assignment2g'}>
 
 The goal of this milestone is to choose a design idea to pursue in the remainder of this course.
 
@@ -516,7 +515,7 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2g' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2g'} /></p>
 
 #### In Class
 
@@ -543,7 +542,7 @@ This milestone will be graded on a scale of __8 points__:
   * ASSIGNMENT 2P
   *
   */}
-<CollapseProjectMilestone heading='2p: Presentation' dueDateName='dueDateAssignment2p'>
+<CollapseProjectMilestone milestone={'assignment2p'}>
 
 The goal of this milestone is to effectively communicate your design research in a presentation.
 
@@ -618,7 +617,7 @@ But you are ultimately responsible for your presentation.
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment2p' /></p>
+<p><AssignmentCanvasLink milestone={'assignment2p'} /></p>
 
 ### Grading
 

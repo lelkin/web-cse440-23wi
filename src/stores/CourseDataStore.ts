@@ -1,11 +1,9 @@
 import { useAppStore } from 'src/stores/AppStoreProvider';
 
 import {
-    //AssignmentItem,
     CalendarDate,
     CalendarItem,
     CalendarWeek,
-    //DueDate,
     Link,
     TimeAndLocation
 } from 'src/types/CourseDataStore';
@@ -13,32 +11,21 @@ import {
 // info store
 import {
     DateTime,
-    DateTimeFormatOptions,
 } from 'luxon';
+
+import {
+    AssignmentStore
+} from "src/types/AssignmentStore";
+import {
+    getAssignmentStore
+} from "src/stores/AssignmentStore";
+
 import {
     ProjectSamplesStore,
 } from "src/types/ProjectSamplesStore";
 import {
     getProjectSamplesStore,
 } from "src/stores/ProjectSamplesStore";
-import {AssignmentStore} from "src/stores/AssignmentStore";
-
-// info store
-const DATE_FORMAT_OPTIONS = {
-    month: 'long',
-    day: 'numeric',
-    weekday: 'long'
-} as DateTimeFormatOptions;
-
-export function formatDateString(dateString: string): string {
-    return DateTime.fromISO(dateString).toLocaleString(DATE_FORMAT_OPTIONS);
-}
-
-// TODO: Resolve existence of two versions of this.
-export function formatDateStringNew(dueDate: DateTime): string {
-    return dueDate.toLocaleString(DATE_FORMAT_OPTIONS);
-}
-// end info store
 
 const LECTURE_TIME_AND_LOCATION: TimeAndLocation = '10:00 - 11:20 | NAN 181';
 const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
@@ -588,5 +575,5 @@ export class CourseDataStore {
 
     projectSamplesStore: ProjectSamplesStore = getProjectSamplesStore();
 
-    assignmentStore: AssignmentStore = new AssignmentStore(this.calendarItems);
+    assignmentStore: AssignmentStore = getAssignmentStore();
 }
