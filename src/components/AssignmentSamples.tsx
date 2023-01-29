@@ -7,16 +7,19 @@ import * as React from 'react';
 import GeneratedLink from '../common/GeneratedLink';
 
 import { useAppStore } from '../stores/AppStoreProvider';
-import { AssignmentSampleLinkKey, assertAssignmentSampleLinkKey, ProjectSampleKeyValues } from "src/stores/ProjectSamplesStore";
+
+import { ProjectSampleKeyValues } from "src/stores/ProjectSamplesStore";
+import { assertProjectSampleMilestoneKey, ProjectSampleMilestoneKey } from "src/types/ProjectSamplesStore";
 
 interface AssignmentSamplesProps {
-    milestone: AssignmentSampleLinkKey;
+    milestone: ProjectSampleMilestoneKey;
 }
 
 export const AssignmentSamples: React.FunctionComponent<AssignmentSamplesProps> = (props) => {
     const store = useAppStore();
 
-    assertAssignmentSampleLinkKey(props.milestone);
+    // Validate props
+    assertProjectSampleMilestoneKey(props.milestone);
 
     return (
         <React.Fragment>
@@ -42,7 +45,7 @@ export const AssignmentSamples: React.FunctionComponent<AssignmentSamplesProps> 
                 return ProjectSampleKeyValues.map((sampleKeyCurrent) => {
                     const sampleCurrent = projectSamplesStore.samples[sampleKeyCurrent];
 
-                    const renderMilestone: AssignmentSampleLinkKey = (() => {
+                    const renderMilestone: ProjectSampleMilestoneKey = (() => {
                         if (
                             props.milestone == 'assignment1b' &&
                             [

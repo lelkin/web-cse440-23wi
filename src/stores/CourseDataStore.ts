@@ -15,7 +15,12 @@ import {
     DateTime,
     DateTimeFormatOptions,
 } from 'luxon';
-import {ProjectSamplesStore, ProjectSamplesStoreImpl} from "src/stores/ProjectSamplesStore";
+import {
+    ProjectSamplesStore,
+} from "src/types/ProjectSamplesStore";
+import {
+    getProjectSamplesStore,
+} from "src/stores/ProjectSamplesStore";
 import {AssignmentStore} from "src/stores/AssignmentStore";
 
 // info store
@@ -581,7 +586,7 @@ export class CourseDataStore {
         )
     }
 
-    projectSamplesStore: ProjectSamplesStore = new ProjectSamplesStoreImpl();
+    projectSamplesStore: ProjectSamplesStore = getProjectSamplesStore();
 
     assignmentStore: AssignmentStore = new AssignmentStore(this.calendarItems);
 }
