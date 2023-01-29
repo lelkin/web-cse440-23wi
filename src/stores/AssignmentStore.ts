@@ -91,183 +91,181 @@ const ASSIGNMENT_STORE: AssignmentStore = {
         //
         assignment0: {
             title: '0 - Introduction Slide',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157',
+            dueDate: DateTime.fromISO('2023-01-05'),
 
-            assignmentSubmissionText:  'Uploaded 8:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-05'),
+            canvasSubmitTime: '8:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941157',
         },
         //
         // Assignment 1
         //
         assignment1a: {
             title: '1a - Individual Brainstorm',
-            canvasLink: "https://canvas.uw.edu/courses/1612132/assignments/7941158",
+            dueDate: DateTime.fromISO('2023-01-05'),
 
-            assignmentSubmissionText:  'Uploaded 8:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-05'),
+            canvasSubmitTime: '8:00pm',
+            canvasSubmitLink: "https://canvas.uw.edu/courses/1612132/assignments/7941158",
         },
         assignment1b: {
             title: '1b - Group Proposals',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/8044498',
+            dueDate: DateTime.fromISO('2023-01-11'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-11'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/8044498',
         },
         assignment1b_rev: {
             title: '1b_rev - Group Proposals',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160',
+            dueDate: DateTime.fromISO('2023-01-12'),
 
-            assignmentSubmissionText: 'Uploaded 8:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-12'),
+            canvasSubmitTime: '8:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941160',
         },
         assignment1c: {
             title: '1c - Finalized Proposal',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
+            dueDate: DateTime.fromISO('2023-01-16'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-16'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
         },
         //
         // Assignment 2
         //
         assignment2a: {
             title: '2a - Project Ideation',
-            canvasLink: null,
+            dueDate: DateTime.fromISO('2023-01-17'),
 
-            assignmentSubmissionText: 'Completed in class ' + '.',
-            assignmentDueDate: DateTime.fromISO('2023-01-17'),
+            submitText: 'Completed in class.',
         },
         assignment2b: {
             title: '2b - Design Research Plan',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941162',
+            dueDate: DateTime.fromISO('2023-01-19'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-19'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941162',
         },
         assignment2c: {
             title: '2c - Design Research Check-In',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
+            dueDate: DateTime.fromISO('2023-01-23'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-23'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941161',
         },
         assignment2d: {
             title: '2d - Design Research Review',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941164',
+            dueDate: DateTime.fromISO('2023-01-26'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-26'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941164',
         },
         assignment2e: {
             title: '2e - Task Review',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941165',
+            dueDate: DateTime.fromISO('2023-01-30'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-01-30'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941165',
         },
         assignment2f: {
             title: '2f - Design Check-In',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941166',
+            dueDate: DateTime.fromISO('2023-02-01'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-01'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941166',
         },
         assignment2f_rev: {
             title: '2f_rev - Design Check-In',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941167',
+            dueDate: DateTime.fromISO('2023-02-02'),
 
-            assignmentSubmissionText: 'Uploaded 8:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-02'),
+            canvasSubmitTime: '8:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941167',
         },
         assignment2g: {
             title: '2g - Design Review',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941168',
+            dueDate: DateTime.fromISO('2023-02-06'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-06'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941168',
         },
         assignment2p: {
             title: '2p - Presentation',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941169',
+            dueDate: DateTime.fromISO('2023-02-08'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-08'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941169',
         },
         //
         // Assignment 3
         //
         assignment3a: {
             title: '3a - Paper Prototype',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941170',
+            dueDate: DateTime.fromISO('2023-02-13'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-13'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941170',
         },
         assignment3b: {
             title: '3b - Heuristic Evaluation',
-            canvasLink: null,
+            dueDate: DateTime.fromISO('2023-02-14'),
 
-            assignmentSubmissionText: 'Submitted with Assignment 3c.',
-            assignmentDueDate: DateTime.fromISO('2023-02-14'),
+            submitText: 'Submitted with Assignment 3c.',
         },
         assignment3c: {
             title: '3c - Usability Testing Check-In',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941172',
+            dueDate: DateTime.fromISO('2023-02-16'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-16'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941172',
         },
         assignment3d: {
             title: '3d - Usability Testing Review',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941173',
+            dueDate: DateTime.fromISO('2023-02-23'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-23'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941173',
         },
         assignment3e: {
             title: '3e - Digital Mockup',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941174',
+            dueDate: DateTime.fromISO('2023-02-27'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-02-27'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941174',
         },
         assignment3p: {
             title: '3p - Presentation',
-            canvasLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941175',
+            dueDate: DateTime.fromISO('2023-03-01'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-03-01'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941175',
         },
         //
         // Assignment 4
         //
         assignment4web: {
             title: '4web - Web Post',
-            canvasLink: 'https://canvas.uw.edu/courses/1545349/assignments/7332263',
+            dueDate: DateTime.fromISO('2023-03-06'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-03-06'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7332263',
         },
         assignment4web_final: {
             title: '4web_final - Web Post',
-            canvasLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398746',
+            dueDate: DateTime.fromISO('2023-03-07'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-03-07'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398746',
         },
         assignment4poster: {
             title: '4poster - Poster and Pitch',
-            canvasLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398750',
+            dueDate: DateTime.fromISO('2023-03-08'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-03-08'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398750',
         },
         assignment4poster_final: {
             title: '4poster_final - Poster and Pitch',
-            canvasLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398752',
+            dueDate: DateTime.fromISO('2023-03-09'),
 
-            assignmentSubmissionText: 'Uploaded 3:00pm',
-            assignmentDueDate: DateTime.fromISO('2023-03-09'),
+            canvasSubmitTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398752',
         },
     }
 }

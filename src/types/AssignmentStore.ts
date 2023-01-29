@@ -16,15 +16,26 @@ import {
 export type AssignmentMilestoneKey = typeof AssignmentMilestoneKeyValues[number];
 
 /**
+ * Information on how an assignment milestone is submitted.
+ *
+ * Either:
+ * - via Canvas, requiring a link and a time.
+ * - via whatever is described in submitText.
+ */
+type AssignmentMilestoneSubmission = {
+    canvasSubmitLink: Link,
+    canvasSubmitTime: string,
+} | {
+    submitText: string,
+}
+
+/**
  * An assignment milestone.
  */
-interface AssignmentMilestone {
+type AssignmentMilestone = {
     title: string,
-    canvasLink: Link,
-
-    assignmentDueDate: DateTime | null
-    assignmentSubmissionText: string,
-}
+    dueDate: DateTime,
+} & AssignmentMilestoneSubmission;
 
 /**
  * Type for the AssignmentStore.
