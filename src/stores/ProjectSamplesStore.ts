@@ -5,7 +5,7 @@ import {
 /**
  * A key for each sample project.
  */
-export const ProjectSampleKeyValues = [
+export const ProjectSamplesProjectKeyValues = [
     'backtrack',
     'bookwurm',
     'clark',
@@ -29,7 +29,7 @@ export const ProjectSampleKeyValues = [
  *
  * Each project will provide each of these sample assignments.
  */
-export const ProjectSampleMilestoneKeyValues = [
+export const ProjectSamplesMilestoneKeyValues = [
     'assignment1b',
     'assignment1c',
     'assignment2b',
