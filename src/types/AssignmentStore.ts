@@ -37,7 +37,7 @@ type AssignmentMilestoneSubmission = CanvasSubmission | OtherSubmission;
 /**
  * An assignment milestone.
  */
-type AssignmentMilestone = {
+export type AssignmentMilestone = {
     title: string,
     dueDate: DateTime,
 } & AssignmentMilestoneSubmission;
