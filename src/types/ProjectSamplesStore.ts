@@ -3,24 +3,37 @@ import {
     ProjectSamplesMilestoneKeyValues,
 } from "src/stores/ProjectSamplesStore";
 
+import {
+    Link
+} from "src/types/CourseDataStore";
+
+/**
+ * Key for a sample project.
+ */
 export type ProjectSamplesProjectKey = typeof ProjectSamplesProjectKeyValues[number];
+
+/**
+ * Key for a sample project milestone.
+ */
 export type ProjectSamplesMilestoneKey = typeof ProjectSamplesMilestoneKeyValues[number];
 
 /**
- * A sample project.
+ * Type for a sample project.
+ *
+ * Includes a link to each sample project milestone.
  */
 interface ProjectSample {
     name: string,
-    link: string,
+    link: Link,
     sampleCanvasLinks: {
-        [item in ProjectSamplesMilestoneKey]: string
+        [item in ProjectSamplesMilestoneKey]: Link
     },
 }
 
 /**
- * Type for Collection of sample projects.
+ * Type for collection of sample projects.
  */
-export type ProjectSamples = {
+type ProjectSamples = {
     [item in ProjectSamplesProjectKey]: ProjectSample
 }
 

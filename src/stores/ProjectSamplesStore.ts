@@ -25,9 +25,9 @@ export const ProjectSamplesProjectKeyValues = [
 ] as const;
 
 /**
- * A key for each sample assignment.
+ * A key for each sample milestone.
  *
- * Each project will provide each of these sample assignments.
+ * Each project will provide each of these sample milestones.
  */
 export const ProjectSamplesMilestoneKeyValues = [
     'assignment1b',

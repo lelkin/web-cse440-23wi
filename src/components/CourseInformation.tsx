@@ -8,105 +8,13 @@ import {
 import GeneratedLink from '../common/GeneratedLink';
 
 import { useAppStore } from '../stores/AppStoreProvider';
-import { CourseDataStore, formatDateStringNew } from "../stores/CourseDataStore";
-import { AssignmentItem, AssignmentStore } from "../stores/AssignmentStore";
-import { DateTime } from 'luxon';
-
-/**
- * Name of the assignment date.
- */
-interface AssignmentDueDateProps {
-    dueDateName: keyof AssignmentStore;
-}
-
-/**
- * Assignment title
- *
- * TODO: Resolve existence of two versions of this.
- */
-interface AssignmentDueDateNewProps {
-    assignmentTitle: AssignmentItem["title"];
-}
-
-/**
- * Render a named assignment date from the course information.
- */
-export const AssignmentDueDate: FunctionComponent<AssignmentDueDateProps> = (props) => {
-    const store = useAppStore();
-
-    // Check this because TypeScript doesn't ensure in MDX files
-    if (!(props.dueDateName in store.courseDataStore.assignmentStore)) {
-        throw new Error(
-            `dueDateName '${props.dueDateName}' must be in store.courseDataStore.`
-        );
-    }
-    if (!(props.dueDateName.startsWith('dueDate'))) {
-        throw new Error(
-            `dueDateName '${props.dueDateName}' must start with 'dueDate'.`
-        );
-    }
-
-    const dueDateText = store.courseDataStore.assignmentStore[props.dueDateName] as string;
-
-    if (dueDateText) {
-        return <span>{dueDateText}</span>;
-    } else {
-        return <Box component="span" sx={{color: "red"}}>Due date to be added</Box>;
-    }
-}
-
-
-/**
- * Render a named assignment date from the course information.
- *
- * TODO: Resolve existence of two versions of this.
- */
-export const AssignmentDueDateNew: FunctionComponent<AssignmentDueDateNewProps> = (props) => {
-    const store = useAppStore();
-
-    const assignmentItem = store.courseDataStore.assignmentStore.getAssignmentItemByTitle(props.assignmentTitle);
-
-    if (typeof assignmentItem == 'undefined') {
-        throw new Error(
-            `Assignment '${props.assignmentTitle}' must be in store.courseDataStore.`
-        );
-    }
-
-    const dueDate = assignmentItem.assignmentDueDate;
-
-    if (dueDate instanceof DateTime) {
-        const dueDateText = assignmentItem.assignmentSubmissionText + ' ' + formatDateStringNew(dueDate) + '.';
-        return <span>{dueDateText}</span>;
-    } else {
-        return <Box component="span" sx={{color: "red"}}>Due date to be added</Box>;
-    }
-}
-
+import { CourseDataStore } from "../stores/CourseDataStore";
 
 /**
  * Name of the link.
  */
 interface CourseInformationLinkProps {
     linkName: keyof CourseDataStore;
-    anchorText?: string;
-}
-
-/**
- * Name of the link.
- */
-// TODO: This will get removed once all assignments changed to new format
-interface AssignmentLinkProps {
-    linkName: keyof AssignmentStore;
-    anchorText?: string;
-}
-
-/**
- * Assignment title
- *
- * TODO: Resolve existence of two versions of this.
- */
-interface AssignmentLinkNewProps {
-    assignmentTitle: AssignmentItem["title"];
     anchorText?: string;
 }
 
@@ -132,67 +40,6 @@ export const CourseInformationLink: FunctionComponent<CourseInformationLinkProps
 
     const link = store.courseDataStore[props.linkName] as string;
     let anchorText = link;
-    if (props.anchorText) {
-        anchorText = props.anchorText;
-    }
-
-    if (link) {
-        return <GeneratedLink href={link}>{anchorText}</GeneratedLink>;
-    } else {
-        return <Box component="span" sx={{color: "red"}}>Link to be added</Box>;
-    }
-}
-
-/**
- * Render a named link from the old format of assignments
- */
-export const AssignmentLink: FunctionComponent<AssignmentLinkProps> = (props) => {
-    const store = useAppStore();
-    
-    // Check this because TypeScript doesn't ensure in MDX files
-    if (!(props.linkName in store.courseDataStore.assignmentStore)) {
-        throw new Error(
-            `linkName '${props.linkName}' must be in store.courseDataStore.assignmentStore.`
-        );
-    }
-    if (!(props.linkName.startsWith('link'))) {
-        throw new Error(
-            `linkName '${props.linkName}' must start with "link".`
-        );
-    }
-
-    const link = store.courseDataStore.assignmentStore[props.linkName] as string;
-    let anchorText = link;
-    if (props.anchorText) {
-        anchorText = props.anchorText;
-    }
-
-    if (link) {
-        return <GeneratedLink href={link}>{anchorText}</GeneratedLink>;
-    } else {
-        return <Box component="span" sx={{color: "red"}}>Link to be added</Box>;
-    }
-}
-
-/**
- * Render a named link from the new format of assignments
- * 
- * TODO: Resolve existence of two versions of this.
- */
-export const AssignmentLinkNew: FunctionComponent<AssignmentLinkNewProps> = (props) => {
-    const store = useAppStore();
-
-    const assignmentItem = store.courseDataStore.assignmentStore.getAssignmentItemByTitle(props.assignmentTitle);
-
-    if (typeof assignmentItem == 'undefined') {
-        throw new Error(
-            `Assignment '${props.assignmentTitle}' must be in store.courseDataStore.`
-        );
-    }
-
-    const link = assignmentItem.assignmentLink as string;
-    let anchorText = link;
-
     if (props.anchorText) {
         anchorText = props.anchorText;
     }
