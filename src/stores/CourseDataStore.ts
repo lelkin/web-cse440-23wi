@@ -42,6 +42,7 @@ const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = '6:00 - 6:50 | Zoom';
 const POSTER_SESSION_TIME_AND_LOCATION: TimeAndLocation = '11:00 - 12:00 | CSE Atrium';
 
 const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 624';
+const OFFICE_HOUR_LISA_TIME_AND_LOCATION_2PM: TimeAndLocation = '2:00 - 3:00 | CSE 624';
 const OFFICE_HOUR_SIMONA_TIME_AND_LOCATION: TimeAndLocation = '2:30 - 3:30 | CSE 3rd Floor Breakout';
 
 
@@ -414,7 +415,6 @@ export class CourseDataStore {
                 DateTime.fromISO('2023-01-12'),
                 DateTime.fromISO('2023-01-19'),
                 DateTime.fromISO('2023-01-26'),
-                DateTime.fromISO('2023-02-02'),
                 DateTime.fromISO('2023-02-09'),
                 DateTime.fromISO('2023-02-16'),
                 DateTime.fromISO('2023-02-23'),
@@ -423,6 +423,14 @@ export class CourseDataStore {
             ],
             title: 'Office Hour - Lisa',
             timeAndLocation: OFFICE_HOUR_LISA_TIME_AND_LOCATION,
+        },
+        {
+            type: 'officehour',
+            dates: [
+                DateTime.fromISO('2023-02-02'),
+            ],
+            title: 'Office Hour - Lisa',
+            timeAndLocation: OFFICE_HOUR_LISA_TIME_AND_LOCATION_2PM,
         },
         {
             type: 'officehour',
