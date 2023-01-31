@@ -39,40 +39,6 @@ export const AssignmentMilestoneKeyValues = [
 ] as const;
 
 
-/*
-// // TODO: Automatically generate these from course start date
-export const ASSIGNMENT_DUE_DATES: {[name: string]: string} = {
-    "assignment2a": '2023-01-17',
-    "assignment2b": '2023-01-19',
-    "assignment2c": '2023-01-23',
-    "assignment2d": '2023-01-26',
-    "assignment2e": '2023-01-30',
-    "assignment2f": '2023-02-01',
-    "assignment2f_rev": '2023-02-02',
-    "assignment2g": '2023-02-06',
-    "assignment2p": '2023-02-08',
-    "assignment3a": '2023-02-13',
-    "assignment3b": '2023-02-14',
-    "assignment3c": '2023-02-16',
-    "assignment3d": '2023-02-23',
-    "assignment3e": '2023-02-27',
-    "assignment3p": '2023-03-01',
-    "assignment4web": '2022-05-30',
-    "assignment4web_final": '2023-03-07',
-    "assignment4poster": '2023-03-08',
-    "assignment4poster_final": '2023-03-09'
-};
- */
-
-/*
-export type AssignmentItem = {
-    title: string,
-    assignmentSubmissionText: string,
-    assignmentLink: Link,
-    assignmentDueDate: DateTime | null
-}
- */
-
 const ASSIGNMENT_STORE: AssignmentStore = {
     milestones: {
         //
@@ -291,59 +257,3 @@ const ASSIGNMENT_STORE: AssignmentStore = {
 }
 
 export const getAssignmentStore: () => AssignmentStore = () => { return ASSIGNMENT_STORE; }
-
-/*
-export class AssignmentStore {
-
-    dueDateAssignment4poster_session: DueDate = '11:00 - 12:00 ' + formatDateString(ASSIGNMENT_DUE_DATES["assignment4poster_final"]) + ' in the CSE Atrium.';
-
-    // Assign values for assignmentDueDate from courseCalendar when instantiated
-    // TODO: I like this better than going through courseDataStore to courseCalendarStore becuase the assignment title, link, and date are all in the same assignment item, but I'm happy to change it if you don't agree.
-    // TODO: Should assignments be allowed to have multiple due dates?
-    // TODO: How to handle due date to be added? If it's in the course calendar, it has a date, right?
-    constructor(calendarItems: CalendarItem[]) {
-
-        this.assignmentItems.forEach(
-
-            (assignmentItem) => {
-                // find corresponding calendar item.
-
-                const assignmentCalendarItem = calendarItems.find (
-                    function(calendarItem) {
-                        return (calendarItem.title == assignmentItem.title && calendarItem.type == 'assignment');
-                    }
-                )
-
-                // assignment not in calendar
-                if(typeof assignmentCalendarItem == 'undefined') {
-                    throw new Error (
-                        `Assignment '${assignmentItem.title}' must be in store.courseDataStore.`
-                    )
-                }
-
-                // assignment has multiple due dates
-                if('dates' in assignmentCalendarItem){
-                    throw new Error (
-                        `Assignment '${assignmentItem.title}' should only have one due date.`
-                    )
-                }
-
-                assignmentItem.assignmentDueDate = assignmentCalendarItem.date;
-                return assignmentItem;
-            }
-        )
-    }
-
-
-    getAssignmentItemByTitle(itemTitle: string): AssignmentItem | undefined {
-        const store = useAppStore();
-
-        return store.courseDataStore.assignmentStore.assignmentItems.find(
-            function(assignmentItem) {
-                return assignmentItem.title == itemTitle;
-            }
-        )
-    }
-
-}
-*/

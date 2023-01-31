@@ -8,7 +8,6 @@ import {
     TimeAndLocation
 } from 'src/types/CourseDataStore';
 
-// info store
 import {
     DateTime,
 } from 'luxon';
@@ -446,16 +445,6 @@ export class CourseDataStore {
                 }
 
                 return calendarItem.type == itemType;
-            }
-        )
-    }
-
-    getCalendarItemsByTitle(itemTitle: string, itemType: string): CalendarItem | undefined {
-        const store = useAppStore();
-
-        return store.courseDataStore.calendarItems.find(
-            function(calendarItem) {
-                return (calendarItem.title == itemTitle && calendarItem.type == itemType);
             }
         )
     }
