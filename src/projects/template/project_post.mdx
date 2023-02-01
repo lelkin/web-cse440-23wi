@@ -1,0 +1,89 @@
+import ProjectImageBlock from "src/components/project/ProjectImageBlock";
+import ProjectImagesBlock from "src/components/project/ProjectImagesBlock";
+import ProjectSubtitle from "src/components/project/ProjectSubtitle";
+import TeamMemberGallery from "src/components/project/TeamMemberGallery";
+
+import winstonRaincoat from "./assets/post/winston_raincoat.jpg";
+import winstonPlane from "./assets/post/winston_plane.jpg";
+import winstonTheo from "./assets/post/winston_theo.jpg";
+
+import pathPhotoWinston from "./assets/team/winston.jpg";
+import pathPhotoTheo from "./assets/team/theo.jpg";
+
+
+# Title
+
+<ProjectSubtitle>Optional Subtitle</ProjectSubtitle>
+
+## Team Members
+
+{/* Add all your team members to TeamMemberGallery */}
+
+<TeamMemberGallery members={[
+    {
+        name: "Winston",
+        photo: pathPhotoWinston,
+    },
+    {
+        name: "Theo",
+        photo: pathPhotoTheo,
+    },
+]} />
+
+## Problem and Design Overview
+
+Problem and design overview text here.
+
+## Design Research Process and Key Insights
+
+You might want to use headings, sub-headings, and sub-sub-headings for organization. For example:
+
+### Process
+
+A nice section for you to write about your process.
+
+### Key Insights
+
+You can use even smaller headings here!
+
+#### Descriptive Title
+
+Super helpful insight here.
+
+#### Another Descriptive Title
+
+Another super helpful insight here.
+
+#### One Final Descriptive Title
+
+One final super helpful insight.
+
+## Iterative Design Process and Key Insights
+
+<ProjectImageBlock
+    image={{src: winstonRaincoat}}
+    caption="Winston wearing a raincoat."
+    width={8}
+>
+After a single paragraph describing your design process, you'll probably want to include an overview image of your paper prototype. I don't have a paper prototype, I just have a really cute dog.
+</ProjectImageBlock>
+
+Make sure to **include key insights** here too. It's in **bold**, so no excuses!
+
+## Resulting Design
+
+Your incredible final design!
+
+<ProjectImagesBlock
+    images={[
+        {src: winstonTheo},
+        {src: winstonPlane},
+    ]}
+    caption="Winston and Theo taking a nap (left); Winston flying in style (right)."
+    direction="row"
+    width={8}
+>
+This section will have a lot of images. You can use the *ProjectImagesBlock* component to display several images together.
+</ProjectImagesBlock>
+
+As you work on this document, you can refer back to the original template [here](/projects/template).
