@@ -17,64 +17,45 @@ import {
 } from 'src/common/GeneratedAnchor';
 
 import {
-    AssignmentDueDate,
-    AssignmentDueDateNew,
-} from 'src/components/CourseInformation';
+    AssignmentDueText
+} from "src/components/AssignmentDueText";
 
 import {
-    AssignmentStore,
-    AssignmentItem
-} from "src/stores/AssignmentStore";
+    assertAssignmentMilestoneKey,
+    AssignmentMilestoneKey
+} from "src/types/AssignmentStore";
+import {getAppStore} from "src/stores/AppStore";
 
 //
 // Properties
 //
 interface CollapseProjectMilestoneProps extends React.PropsWithChildren<{}> {
-    heading: string,
-    dueDateName: keyof AssignmentStore,
-    revisionDueDateName?: keyof AssignmentStore,
-}
-
-interface CollapseProjectMilestonePropsNew extends React.PropsWithChildren<{}> {
-    heading: string,
-    assignmentTitle: AssignmentItem["title"],
-    revisionTitle?: AssignmentItem["title"],
+    milestone: AssignmentMilestoneKey,
+    revisionMilestone?: AssignmentMilestoneKey,
 }
 
 /**
  */
 export const CollapseProjectMilestone: React.FunctionComponent<CollapseProjectMilestoneProps> = observer((props: CollapseProjectMilestoneProps) => {
+    // Validate props, TypeScript does not validate in MDX
+    assertAssignmentMilestoneKey(props.milestone);
+    if(props.revisionMilestone) {
+        assertAssignmentMilestoneKey(props.revisionMilestone);
+    }
+
+    const assignmentStore = getAppStore().courseDataStore.assignmentStore;
+
+    const collapseTitle = assignmentStore.milestones[props.milestone].title;
+
     return <CollapseWithHeader header={
         <Stack>
-            <h3 id={anchorText(props.heading)}>{props.heading}</h3>
-            <p><AssignmentDueDate dueDateName={props.dueDateName} /></p>
-            {!!props.revisionDueDateName && (
-                <p>Revision: <AssignmentDueDate dueDateName={props.revisionDueDateName} /></p>
+            <h3 id={anchorText(collapseTitle)}>{collapseTitle}</h3>
+            <p><AssignmentDueText milestone={props.milestone} /></p>
+            {!!props.revisionMilestone && (
+                <p>Revision: <AssignmentDueText milestone={props.revisionMilestone} /></p>
             )}
         </Stack>
     }>
         {props.children}
     </CollapseWithHeader>
 });
-
-
-/**
- * TODO: Resolve existence of two versions of this.
- */
-export const CollapseProjectMilestoneNew: React.FunctionComponent<CollapseProjectMilestonePropsNew> = observer((props: CollapseProjectMilestonePropsNew) => {
-    let heading = props.heading ? props.heading : props.assignmentTitle;
-    
-    return <CollapseWithHeader header={
-        <Stack>
-            <h3 id={anchorText(heading)}>{heading}</h3>
-            <p><AssignmentDueDateNew assignmentTitle={props.assignmentTitle} /></p>
-            {!!props.revisionTitle && (
-                <p>Revision: <AssignmentDueDateNew assignmentTitle={props.assignmentTitle} /></p>
-            )}
-        </Stack>
-    }>
-        {props.children}
-    </CollapseWithHeader>
-});
-
-//export default CollapseProjectMilestoneNew;

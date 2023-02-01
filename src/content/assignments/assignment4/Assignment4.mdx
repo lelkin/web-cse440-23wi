@@ -9,12 +9,12 @@ import {
 } from 'src/components/CollapseProjectMilestone';
 
 import {
-    AssignmentSamples
-} from 'src/components/AssignmentSamples';
+    ProjectMilestoneSamples
+} from 'src/components/ProjectMilestoneSamples';
 
 import {
-    AssignmentLink,
-} from 'src/components/CourseInformation';
+    AssignmentCanvasLink
+} from "src/components/AssignmentCanvasLink";
 
 import ClarityAndPresentationReference from 'src/content/assignments/ClarityAndPresentationReference.mdx'
 import ContributionStatementReference from 'src/content/assignments/ContributionStatementReference.mdx'
@@ -46,7 +46,7 @@ This is a group assignment, consisting of five milestones.
   * ASSIGNMENT 4 Web
   *
   */}
-<CollapseProjectMilestone heading='4web: Web Post' dueDateName='dueDateAssignment4web'>
+<CollapseProjectMilestone milestone={'assignment4web'}>
 
 The goal of this milestone is to effectively communicate your design
 and your underlying design process in a post appropriate for a web portfolio.
@@ -174,7 +174,7 @@ Be sure:
 
 Prepare this initial version of your web post in a Google Doc, submit a link to that document via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment4web' /></p>
+<p><AssignmentCanvasLink milestone={'assignment4web'} /></p>
 
 Be sure:
 
@@ -218,7 +218,7 @@ Winter 2017 Projects: [https://courses.cs.washington.edu/courses/cse440/17wi/pro
   * ASSIGNMENT 4 Web Final
   *
   */}
-<CollapseProjectMilestone heading='4web_final: Web Post' dueDateName='dueDateAssignment4web_final'>
+<CollapseProjectMilestone milestone={'assignment4web_final'}>
 
 Appropriately revise your web post according to critique and feedback.
 
@@ -262,7 +262,7 @@ We will then coordinate with you around any modifications as we integrate your p
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment4web_final' /></p>
+<p><AssignmentCanvasLink milestone={'assignment4web_final'} /></p>
 
 #### Grading
 
@@ -286,7 +286,7 @@ The content for this post will be graded on a scale of __28 points__:
   * ASSIGNMENT 4 Poster
   *
   */}
-<CollapseProjectMilestone heading='4poster: Poster and Pitch' dueDateName='dueDateAssignment4poster'>
+<CollapseProjectMilestone milestone={'assignment4poster'}>
 
 The goal of this milestone is to create a poster and a pitch that communicate your design to a broad audience.
 
@@ -330,7 +330,7 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment4poster' /></p>
+<p><AssignmentCanvasLink milestone={'assignment4poster'} /></p>
 
 #### In Class
 
@@ -355,7 +355,7 @@ Critique and refinement will help further improve it before a final version.
 
 #### Samples of Prior Submissions
 
-<AssignmentSamples milestone='4poster' />
+<ProjectMilestoneSamples milestone='assignment4poster' />
 </CollapseProjectMilestone>
 
 {/*
@@ -363,7 +363,7 @@ Critique and refinement will help further improve it before a final version.
   * ASSIGNMENT 4 Poster Final
   *
   */}
-<CollapseProjectMilestone heading='4poster_final: Poster and Pitch' dueDateName='dueDateAssignment4poster_final'>
+<CollapseProjectMilestone milestone={'assignment4poster_final'}>
 
 Appropriately revise your poster according to critique and feedback.
 
@@ -389,7 +389,7 @@ Be sure:
 
 Submit via Canvas here:
 
-<p><AssignmentLink linkName='linkCanvasAssignment4poster_final' /></p>
+<p><AssignmentCanvasLink milestone={'assignment4poster_final'} /></p>
 
 We will then coordinate with you for proofreading and printing.
 
@@ -412,7 +412,7 @@ This milestone will be graded on a scale of __10 points__:
   * ASSIGNMENT 4 Poster Session
   *
   */}
-<CollapseProjectMilestone heading='4poster_session: Poster Session' dueDateName='dueDateAssignment4poster_session'>
+<CollapseProjectMilestone milestone={'assignment4poster_session'}>
 
 Come to the poster session to show off your work and engage with your classmates.
 Present your pitch to a team of judges,

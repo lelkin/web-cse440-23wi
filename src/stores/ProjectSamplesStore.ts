@@ -1,43 +1,11 @@
-/**
- * Assignments for each sample assignment.
- */
-const AssignmentSampleLinkKeyValues = [
-    'assignment1b',
-    'assignment1c',
-    'assignment2b',
-    'assignment2c',
-    'assignment2d',
-    'assignment2e',
-    'assignment2f',
-    'assignment2g',
-    // 'assignment2h',
-    'assignment2p',
-    'assignment3a',
-    // 'assignment3b',
-    'assignment3c',
-    'assignment3d',
-    'assignment3e',
-    'assignment3p',
-    'assignment4poster',
-] as const;
-export type AssignmentSampleLinkKey = typeof AssignmentSampleLinkKeyValues[number];
-
-export function assertAssignmentSampleLinkKey(value: unknown): asserts value is AssignmentSampleLinkKey {
-    const valid = (AssignmentSampleLinkKeyValues as unknown as Array<unknown>).includes(value);
-
-    if (!valid) {
-        throw new Error(`Invalid AssignmentSampleLinkKey: ${value}`)
-    }
-}
-
-type AssignmentSampleLinks = {
-    [item in AssignmentSampleLinkKey]: string
-}
+import {
+    ProjectSamplesStore,
+} from "src/types/ProjectSamplesStore";
 
 /**
- * Names for each sample project.
+ * A key for each sample project.
  */
-export const ProjectSampleKeyValues = [
+export const ProjectSamplesProjectKeyValues = [
     'backtrack',
     'bookwurm',
     'clark',
@@ -55,30 +23,35 @@ export const ProjectSampleKeyValues = [
     'wastewizard',
     'wishingwell',
 ] as const;
-type ProjectSampleKey = typeof ProjectSampleKeyValues[number];
 
 /**
- * A sample project.
+ * A key for each sample milestone.
+ *
+ * Each project will provide each of these sample milestones.
  */
-export interface ProjectSample {
-    name: string,
-    link: string,
-    sampleCanvasLinks: AssignmentSampleLinks,
-}
+export const ProjectSamplesMilestoneKeyValues = [
+    'assignment1b',
+    'assignment1c',
+    'assignment2b',
+    'assignment2c',
+    'assignment2d',
+    'assignment2e',
+    'assignment2f',
+    'assignment2g',
+    'assignment2p',
+    'assignment3a',
+    'assignment3c',
+    'assignment3d',
+    'assignment3e',
+    'assignment3p',
+    'assignment4poster',
+] as const;
 
 /**
- * Collection of sample projects.
+ * The actual ProjectSamplesStore.
  */
-type ProjectSamples = {
-    [item in ProjectSampleKey]: ProjectSample
-}
-
-export interface ProjectSamplesStore {
-    samples: ProjectSamples,
-}
-
-export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
-    samples: ProjectSamples = {
+const PROJECT_SAMPLE_STORE: ProjectSamplesStore = {
+    samples: {
         backtrack: {
             name: 'BackTrack',
             link: 'https://courses.cs.washington.edu/courses/cse440/17au/projects/backtrack/',
@@ -91,10 +64,8 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133309',
                 assignment2f: 'https://canvas.uw.edu/files/100133310',
                 assignment2g: 'https://canvas.uw.edu/files/100133311',
-                // '2h': 'https://canvas.uw.edu/files/100133312',
                 assignment2p: 'https://canvas.uw.edu/files/100133313',
                 assignment3a: 'https://canvas.uw.edu/files/100133314',
-                // '3b': 'https://canvas.uw.edu/files/100133315',
                 assignment3c: 'https://canvas.uw.edu/files/100133316',
                 assignment3d: 'https://canvas.uw.edu/files/100133317',
                 assignment3e: 'https://canvas.uw.edu/files/100133318',
@@ -114,7 +85,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133327',
                 assignment2f: 'https://canvas.uw.edu/files/100133328',
                 assignment2g: 'https://canvas.uw.edu/files/100133329',
-                // '2h': 'https://canvas.uw.edu/files/100133330',
                 assignment2p: 'https://canvas.uw.edu/files/100133331',
                 assignment3a: 'https://canvas.uw.edu/files/100133332',
                 assignment3c: 'https://canvas.uw.edu/files/100133333',
@@ -178,7 +148,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133373',
                 assignment2f: 'https://canvas.uw.edu/files/100133374',
                 assignment2g: 'https://canvas.uw.edu/files/100133375',
-                // '2h': 'https://canvas.uw.edu/files/100133376',
                 assignment2p: 'https://canvas.uw.edu/files/100133377',
                 assignment3a: 'https://canvas.uw.edu/files/100133378',
                 assignment3c: 'https://canvas.uw.edu/files/100133379',
@@ -200,10 +169,8 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133389',
                 assignment2f: 'https://canvas.uw.edu/files/100133390',
                 assignment2g: 'https://canvas.uw.edu/files/100133391',
-                // '2h': 'https://canvas.uw.edu/files/100133392',
                 assignment2p: 'https://canvas.uw.edu/files/100133393',
                 assignment3a: 'https://canvas.uw.edu/files/100133394',
-                // '3b': 'https://canvas.uw.edu/files/100133395',
                 assignment3c: 'https://canvas.uw.edu/files/100133396',
                 assignment3d: 'https://canvas.uw.edu/files/100133397',
                 assignment3e: 'https://canvas.uw.edu/files/100133398',
@@ -223,7 +190,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133406',
                 assignment2f: 'https://canvas.uw.edu/files/100133407',
                 assignment2g: 'https://canvas.uw.edu/files/100133408',
-                // '2h': 'https://canvas.uw.edu/files/100133409',
                 assignment2p: 'https://canvas.uw.edu/files/100133410',
                 assignment3a: 'https://canvas.uw.edu/files/100133411',
                 assignment3c: 'https://canvas.uw.edu/files/100133412',
@@ -245,7 +211,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133422',
                 assignment2f: 'https://canvas.uw.edu/files/100133423',
                 assignment2g: 'https://canvas.uw.edu/files/100133424',
-                // '2h': 'https://canvas.uw.edu/files/100133425',
                 assignment2p: 'https://canvas.uw.edu/files/100133426',
                 assignment3a: 'https://canvas.uw.edu/files/100133427',
                 assignment3c: 'https://canvas.uw.edu/files/100133428',
@@ -267,7 +232,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133439',
                 assignment2f: 'https://canvas.uw.edu/files/100133440',
                 assignment2g: 'https://canvas.uw.edu/files/100133441',
-                // '2h': 'https://canvas.uw.edu/files/100133442',
                 assignment2p: 'https://canvas.uw.edu/files/100133443',
                 assignment3a: 'https://canvas.uw.edu/files/100133444',
                 assignment3c: 'https://canvas.uw.edu/files/100133445',
@@ -289,7 +253,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133454',
                 assignment2f: 'https://canvas.uw.edu/files/100133455',
                 assignment2g: 'https://canvas.uw.edu/files/100133456',
-                // '2h': 'https://canvas.uw.edu/files/100133457',
                 assignment2p: 'https://canvas.uw.edu/files/100133458',
                 assignment3a: 'https://canvas.uw.edu/files/100133460',
                 assignment3c: 'https://canvas.uw.edu/files/100133461',
@@ -310,10 +273,8 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133471',
                 assignment2f: 'https://canvas.uw.edu/files/100133472',
                 assignment2g: 'https://canvas.uw.edu/files/100133473',
-                // '2h': 'https://canvas.uw.edu/files/100133474',
                 assignment2p: 'https://canvas.uw.edu/files/100133475',
                 assignment3a: 'https://canvas.uw.edu/files/100133476',
-                // '3b': 'https://canvas.uw.edu/files/100133477',
                 assignment3c: 'https://canvas.uw.edu/files/100133478',
                 assignment3d: 'https://canvas.uw.edu/files/100133479',
                 assignment3e: 'https://canvas.uw.edu/files/100133480',
@@ -333,7 +294,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133488',
                 assignment2f: 'https://canvas.uw.edu/files/100133489',
                 assignment2g: 'https://canvas.uw.edu/files/100133490',
-                // '2h': 'https://canvas.uw.edu/files/100133491',
                 assignment2p: 'https://canvas.uw.edu/files/100133492',
                 assignment3a: 'https://canvas.uw.edu/files/100133493',
                 assignment3c: 'https://canvas.uw.edu/files/100133494',
@@ -355,10 +315,8 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133504',
                 assignment2f: 'https://canvas.uw.edu/files/100133505',
                 assignment2g: 'https://canvas.uw.edu/files/100133506',
-                // '2h': 'https://canvas.uw.edu/files/100133507',
                 assignment2p: 'https://canvas.uw.edu/files/100133508',
                 assignment3a: 'https://canvas.uw.edu/files/100133509',
-                // '3b': 'https://canvas.uw.edu/files/100133510',
                 assignment3c: 'https://canvas.uw.edu/files/100133511',
                 assignment3d: 'https://canvas.uw.edu/files/100133512',
                 assignment3e: 'https://canvas.uw.edu/files/100133513',
@@ -420,7 +378,6 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
                 assignment2e: 'https://canvas.uw.edu/files/100133583',
                 assignment2f: 'https://canvas.uw.edu/files/100133600',
                 assignment2g: 'https://canvas.uw.edu/files/100133607',
-                // '2h': 'https://canvas.uw.edu/files/100133611',
                 assignment2p: 'https://canvas.uw.edu/files/100133618',
                 assignment3a: 'https://canvas.uw.edu/files/100133624',
                 assignment3c: 'https://canvas.uw.edu/files/100133633',
@@ -432,3 +389,5 @@ export class ProjectSamplesStoreImpl implements ProjectSamplesStore {
         }
     }
 }
+
+export const getProjectSamplesStore: () => ProjectSamplesStore = () => { return PROJECT_SAMPLE_STORE; }

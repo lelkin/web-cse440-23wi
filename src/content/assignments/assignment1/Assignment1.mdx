@@ -5,16 +5,18 @@ import {
 import * as React from "react";
 
 import {
-    CollapseProjectMilestoneNew
-} from 'src/components/CollapseProjectMilestone';
-
-import {
-    AssignmentSamples
-} from 'src/components/AssignmentSamples';
+    ProjectMilestoneSamples
+} from 'src/components/ProjectMilestoneSamples';
 import {
     CourseInformationLink,
-    AssignmentLinkNew
 } from 'src/components/CourseInformation';
+import {
+    AssignmentCanvasLink
+} from "src/components/AssignmentCanvasLink";
+
+import {
+    CollapseProjectMilestone
+} from "src/components/CollapseProjectMilestone";
 
 import CanvasGroupsNotCreated from 'src/content/assignments/CanvasGroupsNotCreated.mdx'
 import ClarityAndPresentationReference from 'src/content/assignments/ClarityAndPresentationReference.mdx'
@@ -160,7 +162,7 @@ This is an individual assignment, consisting of three milestones.
   * ASSIGNMENT 1A
   *
   */}
-<CollapseProjectMilestoneNew heading='1a: Individual Brainstorm' assignmentTitle='1a - Individual Brainstorm'>
+<CollapseProjectMilestone milestone={'assignment1a'}>
 
 The goal of this milestone is to help get you started in thinking of some ideas for a potential projects.
 Friday's section will then build on these in brainstorming additional potential directions for project proposals.
@@ -199,7 +201,7 @@ No more than one page of text in PDF format.
 
 Submit via Canvas here:
 
-<p><AssignmentLinkNew assignmentTitle='1a - Individual Brainstorm' /></p>
+<p><AssignmentCanvasLink milestone={'assignment1a'} /></p>
 
 If you are still attempting to add, or otherwise unable to access the submission system, submit via the staff email address.
 
@@ -221,14 +223,14 @@ This milestone will be graded on a scale of __3 points__:
 
    At most one of your ideas may come from the domains listed above (i.e., finances, wellness, health, mood).
 
-</CollapseProjectMilestoneNew>
+</CollapseProjectMilestone>
 
 {/*
   *
   * ASSIGNMENT 1B
   *
   */}
-<CollapseProjectMilestoneNew heading='1b: Group Proposals' assignmentTitle='1b - Group Proposals' revisionTitle='1b_rev - Group Proposals'>
+<CollapseProjectMilestone milestone={'assignment1b'} revisionMilestone={'assignment1b_rev'}>
 
 The goal of this milestone is to propose multiple specific problems that could form the basis of a design project for this class.
 Thursday and Friday will then include presenting these for feedback from peers and course staff.
@@ -258,11 +260,11 @@ No more than one page of text in PDF format.
 
 Submit via Canvas here:
 
-<p><AssignmentLinkNew assignmentTitle='1b - Group Proposals' /></p>
+<p><AssignmentCanvasLink milestone={'assignment1b'} /></p>
 
 After receiving critique on Thursday, submit an updated version via Canvas here:
 
-<p><AssignmentLinkNew assignmentTitle='1b_rev - Group Proposals' /></p>
+<p><AssignmentCanvasLink milestone={'assignment1b_rev'} /></p>
 
 #### In Class
 
@@ -287,16 +289,16 @@ but may also apply a penalty if the original submission was severely underdevelo
 
 #### Samples of Prior Submissions
 
-<AssignmentSamples milestone='assignment1b' />
+<ProjectMilestoneSamples milestone='assignment1b' />
 
-</CollapseProjectMilestoneNew>
+</CollapseProjectMilestone>
 
 {/*
   *
   * ASSIGNMENT 1C
   *
   */}
-<CollapseProjectMilestoneNew heading='1c: Finalized Proposal' assignmentTitle='1c - Finalized Proposal'>
+<CollapseProjectMilestone milestone={'assignment1c'}>
 
 The goal of this milestone is to propose and analyze a problem that will form the basis of a design project for this class.
 You should build upon the feedback you have received from peers and course staff.
@@ -323,7 +325,7 @@ No more than one page of text in PDF format.
 
 Submit via Canvas here:
 
-<p><AssignmentLinkNew assignmentTitle='1c - Finalized Proposal' /></p>
+<p><AssignmentCanvasLink milestone={'assignment1c'} /></p>
 
 #### Grading
 
@@ -338,6 +340,6 @@ This milestone will be graded on a scale of __10 points__:
 
 #### Samples of Prior Submissions
 
-<AssignmentSamples milestone='assignment1c' />
+<ProjectMilestoneSamples milestone='assignment1c' />
 
-</CollapseProjectMilestoneNew>
+</CollapseProjectMilestone>
