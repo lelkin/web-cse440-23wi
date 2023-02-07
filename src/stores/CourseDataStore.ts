@@ -34,7 +34,11 @@ const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
     '12:30 - 1:20 | MGH 058',
     '1:30 - 2:20 | MGH 058',
 ]
-const SECTION_TIME_AND_LOCATIONS_PRESENTATIONS = SECTION_TIME_AND_LOCATIONS;
+const SECTION_TIME_AND_LOCATIONS_WITHOUT_D: TimeAndLocation[] = [
+    '10:30 - 11:20 | MGH 058',
+    '11:30 - 12:20 | MGH 058',
+    '12:30 - 1:20 | MGH 058',
+]
 
 /*
 const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = '6:00 - 6:50 | Zoom';
@@ -177,14 +181,14 @@ export class CourseDataStore {
                 date: DateTime.fromISO('2023-01-31'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Storyboarding, Paper Prototyping, and Testing',
-                // slides: 'https://canvas.uw.edu/files/91400789/',
+                slides: 'https://canvas.uw.edu/files/101474158/',
             },
             {
                 type: 'lecture',
                 date: DateTime.fromISO('2023-02-07'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Effective Presentations',
-                // slides: 'https://canvas.uw.edu/files/91705969/',
+                slides: 'https://canvas.uw.edu/files/101784235/',
             },
             {
                 type: 'lecture',
@@ -385,7 +389,7 @@ export class CourseDataStore {
                 type: 'event',
                 title: 'Presentations',
                 date: DateTime.fromISO('2023-02-10'),
-                timeAndLocations: SECTION_TIME_AND_LOCATIONS_PRESENTATIONS,
+                timeAndLocations: SECTION_TIME_AND_LOCATIONS_WITHOUT_D,
             },
             {
                 type: 'event',
@@ -397,7 +401,7 @@ export class CourseDataStore {
                 type: 'event',
                 title: 'Presentations',
                 date: DateTime.fromISO('2023-03-03'),
-                timeAndLocations: SECTION_TIME_AND_LOCATIONS_PRESENTATIONS,
+                timeAndLocations: SECTION_TIME_AND_LOCATIONS,
             },
             {
                 type: 'event',
