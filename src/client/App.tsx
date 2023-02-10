@@ -44,6 +44,7 @@ import ProjectSprout from "src/projects/sprout/project_post.mdx";
 import ProjectStackBased from "src/projects/stackbased/project_post.mdx";
 import ProjectWasteWizard from "src/projects/wastewizard/project_post.mdx";
  */
+import ProjectTemplate from "src/projects/template/project_post.mdx";
 
 import AssignmentsOverview from "src/content/assignments/Overview.mdx"
 import Assignment0 from "src/content/assignments/assignment0/Assignment0.mdx"
@@ -192,6 +193,7 @@ export const App: React.FunctionComponent = () => {
                         <Route path="/projects/stackbased" element={<ProjectStackBased/>} />
                         <Route path="/projects/wastewizard" element={<ProjectWasteWizard/>} />
                         */}
+                        <Route path="/projects/template" element={<ProjectTemplate/>} />
                         <Route path="/assignments" element={<Assignments/>}>
                             <Route path="" element={<AssignmentsOverview/>} />
                             <Route path="assignment0" element={<Assignment0/>} />

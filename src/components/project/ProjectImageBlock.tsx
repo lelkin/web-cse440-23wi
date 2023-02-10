@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import ProjectImagesBlock from "src/components/ProjectImagesBlock";
+import ProjectImagesBlock from "src/components/project/ProjectImagesBlock";
 
 interface ProjectImage {
     src: string;
