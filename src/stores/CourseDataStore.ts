@@ -40,9 +40,7 @@ const SECTION_TIME_AND_LOCATIONS_WITHOUT_D: TimeAndLocation[] = [
     '12:30 - 1:20 | MGH 058',
 ]
 
-/*
-const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = '6:00 - 6:50 | Zoom';
-*/
+const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = 'Time TBD | Zoom';
 const POSTER_SESSION_TIME_AND_LOCATION: TimeAndLocation = '11:00 - 12:00 | CSE Atrium';
 
 const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 624';
@@ -174,7 +172,7 @@ export class CourseDataStore {
                 date: DateTime.fromISO('2023-01-26'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Models and Human Performance',
-                slides: 'https://canvas.uw.edu/files/101252848/',
+                slides: 'https://canvas.uw.edu/files/102115599/',
             },
             {
                 type: 'lecture',
@@ -195,14 +193,14 @@ export class CourseDataStore {
                 date: DateTime.fromISO('2023-02-14'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Inspection',
-                // slides: 'https://canvas.uw.edu/files/91968017/',
+                slides: 'https://canvas.uw.edu/files/102112566/',
             },
             {
                 type: 'lecture',
                 date: DateTime.fromISO('2023-02-16'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Patterns and Interface Implementation',
-                // slides: 'https://canvas.uw.edu/files/92049795/',
+                slides: 'https://canvas.uw.edu/files/102112518/',
             },
             {
                 type: 'lecture',
@@ -261,7 +259,6 @@ export class CourseDataStore {
             //
             // Exam Review Calendar Items
             //
-            /*
             {
                 type: 'studio',
                 dates: [
@@ -269,9 +266,8 @@ export class CourseDataStore {
                 ],
                 timeAndLocation: EXAM_REVIEW_TIME_AND_LOCATION,
                 title: 'Exam Q&A',
-                slides: 'https://canvas.uw.edu/files/92053501/',
+                slides: 'https://canvas.uw.edu/files/102116761/',
             },
-            */
 
             //
             // Office Hour Calendar Items
@@ -331,6 +327,7 @@ export class CourseDataStore {
                 type: 'away',
                 dates: [
                     DateTime.fromISO('2023-01-17'),
+                    DateTime.fromISO('2023-02-14'),
                 ],
                 title: 'Ethan Away',
             },
