@@ -184,7 +184,7 @@ const ASSIGNMENT_STORE: AssignmentStore = {
             dueDate: DateTime.fromISO('2023-02-16'),
 
             submission: 'canvas',
-            canvasDueTime: '3:00pm',
+            canvasDueTime: '8:00pm',
             canvasSubmitLink: 'https://canvas.uw.edu/courses/1612132/assignments/7941172',
         },
         assignment3d: {
