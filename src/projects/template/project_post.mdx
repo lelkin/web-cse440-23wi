@@ -17,7 +17,7 @@ import pathPhotoTheo from "./assets/team/theo.jpg";
 
 ## Team Members
 
-{/* Add all your team members to TeamMemberGallery */}
+See [Components](#Componenets) section below for instructions on how to use the Team Member Gallery.
 
 <TeamMemberGallery members={[
     {
@@ -32,47 +32,91 @@ import pathPhotoTheo from "./assets/team/theo.jpg";
 
 ## Problem and Design Overview
 
-Problem and design overview text here.
+Concise statement of the problem you are addressing and a brief introduction of your design.
 
 ## Design Research Process and Key Insights
 
-You might want to use headings, sub-headings, and sub-sub-headings for organization. For example:
-
-### Process
-
-A nice section for you to write about your process.
-
-### Key Insights
-
-You can use even smaller headings here!
-
-#### Descriptive Title
-
-Super helpful insight here.
-
-#### Another Descriptive Title
-
-Another super helpful insight here.
-
-#### One Final Descriptive Title
-
-One final super helpful insight.
+Concise overview of your design research process in Assignment 2 and
+three key insights from your design research process in Assignment 2.
 
 ## Iterative Design Process and Key Insights
+
+Concise overview of your iterative design process in Assignment 3 and
+three key insights from your iterative design process in Assignment 3.
+
+## Resulting Design
+
+Your incredible final design!
+
+## Components
+
+**Do not include this section in your final submission**
+
+This section contains descriptions and examples of the components available to you.
+
+As you work on this document, you can refer back to the original template [here](/projects/template).
+
+### Project Subtitle
+
+We've already included the project subtitle for you at the top of this document.
+You can remove it if you don't want a subtitle.
+
+<ProjectSubtitle>Optional Subtitle</ProjectSubtitle>
+
+### Team Member Gallery
+
+Add images of all or team members to the team directory (in the assets directory),
+import the images at the top of this document, 
+and include these images in the TeamMemberGallery above.
+
+The images you add will be rendered to be 150px wide, 
+so make sure the photos you use are already 150px wide, and
+pre-scale or crop them to make them all the same height.
+
+<TeamMemberGallery members={[
+    {
+        name: "Winston",
+        photo: pathPhotoWinston,
+    },
+    {
+        name: "Theo",
+        photo: pathPhotoTheo,
+    },
+]} />
+
+### Project Image Block
 
 <ProjectImageBlock
     image={{src: winstonRaincoat}}
     caption="Winston wearing a raincoat."
     width={8}
+    maxHeight="440px"
 >
-After a single paragraph describing your design process, you'll probably want to include an overview image of your paper prototype. I don't have a paper prototype, I just have a really cute dog.
+Note: This is a Project *Image* Block (singular image).
+
+A ProjectImageBlock places an image on the right hand side of the screen and a chunk of text on the left hand side.
+
+The properties in a ProjectImageBlock are:
+
+**image**  
+src: *nameOfImage*  
+Where *nameOfImage* is the name of an image you've imported at the top of this file.
+
+**caption**  
+A string containing the caption that will appear directly below the image.  
+This is an optional parameter; default is an empty string.
+
+**width**  
+4 | 6 | 8  
+This is the width of your image.
+
+**maxHeight**  
+A string indicating the maximum height of the image in pixels.  
+This is an optional paramter; default is "400px".
+
 </ProjectImageBlock>
 
-Make sure to **include key insights** here too. It's in **bold**, so no excuses!
-
-## Resulting Design
-
-Your incredible final design!
+### Project Images Block
 
 <ProjectImagesBlock
     images={[
@@ -82,8 +126,33 @@ Your incredible final design!
     caption="Winston and Theo taking a nap (left); Winston flying in style (right)."
     direction="row"
     width={8}
+    maxHeight="200px"
 >
-This section will have a lot of images. You can use the *ProjectImagesBlock* component to display several images together.
+Note: This say Project *Images* Block (plural images).
+
+A ProjectImagseBlock places a row or column of image on the right hand side of the screen
+and a chunk of text on the left hand side.
+
+The properties in a ProjectImagesBlock are:
+
+**images**  
+A ProjectImageArray
+
+**caption**  
+A string containing the caption that will appear directly below the images.  
+This is an optional parameter; default is an empty string.
+
+**direction**
+"row" | "column"
+A string indicating whether the images will be displayed in a row or a column.
+
+**width**  
+4 | 6 | 8  
+This is either the width of the row of images or the height of the column.
+
+**maxHeight**  
+A string indicating the maximum height of the image in pixels.  
+This is an optional paramter; default is "400px".
+
 </ProjectImagesBlock>
 
-As you work on this document, you can refer back to the original template [here](/projects/template).
