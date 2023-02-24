@@ -40,7 +40,7 @@ const SECTION_TIME_AND_LOCATIONS_WITHOUT_D: TimeAndLocation[] = [
     '12:30 - 1:20 | MGH 058',
 ]
 
-const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = 'Time TBD | Zoom';
+const EXAM_REVIEW_TIME_AND_LOCATION: TimeAndLocation = '1:30 - 2:20 | Zoom';
 const POSTER_SESSION_TIME_AND_LOCATION: TimeAndLocation = '11:00 - 12:00 | CSE Atrium';
 
 const OFFICE_HOUR_LISA_TIME_AND_LOCATION: TimeAndLocation = '1:00 - 2:00 | CSE 624';
@@ -207,7 +207,7 @@ export class CourseDataStore {
                 date: DateTime.fromISO('2023-02-23'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'Designing for Diverse Needs',
-                // slides: 'https://canvas.uw.edu/files/92303593/',
+                slides: 'https://canvas.uw.edu/files/102516490/',
             },
             {
                 type: 'lecture',
