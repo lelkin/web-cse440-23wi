@@ -214,37 +214,37 @@ const ASSIGNMENT_STORE: AssignmentStore = {
         //
         // Assignment 4
         //
-        assignment4web: {
-            title: '4web - Web Post',
-            dueDate: DateTime.fromISO('2023-03-06'),
-
-            submission: 'canvas',
-            canvasDueTime: '3:00pm',
-            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7332263',
-        },
-        assignment4web_final: {
-            title: '4web_final - Web Post',
-            dueDate: DateTime.fromISO('2023-03-07'),
-
-            submission: 'canvas',
-            canvasDueTime: '3:00pm',
-            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398746',
-        },
         assignment4poster: {
             title: '4poster - Poster and Pitch',
-            dueDate: DateTime.fromISO('2023-03-08'),
+            dueDate: DateTime.fromISO('2023-03-06'),
 
             submission: 'canvas',
             canvasDueTime: '3:00pm',
             canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398750',
         },
+        assignment4web: {
+            title: '4web - Web Post',
+            dueDate: DateTime.fromISO('2023-03-07'),
+
+            submission: 'canvas',
+            canvasDueTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7332263',
+        },
         assignment4poster_final: {
             title: '4poster_final - Poster and Pitch',
-            dueDate: DateTime.fromISO('2023-03-09'),
+            dueDate: DateTime.fromISO('2023-03-08'),
 
             submission: 'canvas',
             canvasDueTime: '3:00pm',
             canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398752',
+        },
+        assignment4web_final: {
+            title: '4web_final - Web Post',
+            dueDate: DateTime.fromISO('2023-03-09'),
+
+            submission: 'canvas',
+            canvasDueTime: '3:00pm',
+            canvasSubmitLink: 'https://canvas.uw.edu/courses/1545349/assignments/7398746',
         },
         assignment4poster_session: {
             title: '4poster_session - Poster Session',
