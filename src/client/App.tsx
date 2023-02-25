@@ -27,23 +27,25 @@ import Calendar from "src/pages/Calendar.mdx";
 import Home from "src/pages/Home.mdx";
 import Projects from "src/pages/Projects.mdx";
 
-/* PROJECTS
-import ProjectBloom from "src/projects/bloom/project_post.mdx";
-import ProjectBuzzed from "src/projects/buzzed/project_post.mdx";
-import ProjectClark from "src/projects/clark/project_post.mdx";
-import ProjectClosr from "src/projects/closr/project_post.mdx";
-import ProjectCupanion from "src/projects/cupanion/project_post.mdx";
-import ProjectDispurrse from "src/projects/dispurrse/project_post.mdx";
-import ProjectEasyList from "src/projects/easylist/project_post.mdx";
-import ProjectFoClass from "src/projects/foclass/project_post.mdx";
-import ProjectQuik from "src/projects/quik/project_post.mdx";
-import ProjectReci from "src/projects/reci/project_post.mdx";
-import ProjectRecoverTogether from "src/projects/recovertogether/project_post.mdx";
-import ProjectSousChef from "src/projects/souschef/project_post.mdx";
-import ProjectSprout from "src/projects/sprout/project_post.mdx";
-import ProjectStackBased from "src/projects/stackbased/project_post.mdx";
-import ProjectWasteWizard from "src/projects/wastewizard/project_post.mdx";
- */
+/* PROJECTS */
+
+import ProjectBFRBreak from '../projects/bfrbreak/project_post.mdx';
+import ProjectEmotiVerse from '../projects/emotiverse/project_post.mdx';
+import ProjectGreenCloset from '../projects/greencloset/project_post.mdx';
+import ProjectGymStar from '../projects/gymstar/project_post.mdx';
+import ProjectHuddle from '../projects/huddle/project_post.mdx';
+import ProjectLingual from '../projects/lingual/project_post.mdx';
+import ProjectMediSymp from '../projects/medisymp/project_post.mdx';
+import ProjectNomNom from '../projects/medisymp/project_post.mdx';
+import ProjectOptimizeMe from '../projects/optimizeme/project_post.mdx';
+import ProjectPenPal from '../projects/penpal/project_post.mdx';
+import ProjectPinPal from '../projects/pinpal/project_post.mdx';
+import ProjectSmartBoxer from '../projects/smartboxer/project_post.mdx';
+import ProjectStrelmo from '../projects/strelmo/project_post.mdx';
+import ProjectTheKiddeTable from '../projects/thekiddietable/project_post.mdx';
+import ProjectTracne from '../projects/tracne/project_post.mdx';
+import ProjectWishbone from '../projects/wishbone/project_post.mdx';
+
 import ProjectTemplate from "src/projects/template/project_post.mdx";
 
 import AssignmentsOverview from "src/content/assignments/Overview.mdx"
@@ -176,23 +178,25 @@ export const App: React.FunctionComponent = () => {
                     <Routes>
                         <Route path="/" element={<Home/>} />
                         <Route path="/projects" element={<Projects/>} />
-                        {/* PROJECTS
-                        <Route path="/projects/bloom" element={<ProjectBloom/>} />
-                        <Route path="/projects/buzzed" element={<ProjectBuzzed/>} />
-                        <Route path="/projects/clark" element={<ProjectClark/>} />
-                        <Route path="/projects/closr" element={<ProjectClosr/>} />
-                        <Route path="/projects/cupanion" element={<ProjectCupanion/>} />
-                        <Route path="/projects/dispurrse" element={<ProjectDispurrse/>} />
-                        <Route path="/projects/easylist" element={<ProjectEasyList/>} />
-                        <Route path="/projects/foclass" element={<ProjectFoClass/>} />
-                        <Route path="/projects/quik" element={<ProjectQuik/>} />
-                        <Route path="/projects/reci" element={<ProjectReci/>} />
-                        <Route path="/projects/recovertogether" element={<ProjectRecoverTogether/>} />
-                        <Route path="/projects/souschef" element={<ProjectSousChef/>} />
-                        <Route path="/projects/sprout" element={<ProjectSprout/>} />
-                        <Route path="/projects/stackbased" element={<ProjectStackBased/>} />
-                        <Route path="/projects/wastewizard" element={<ProjectWasteWizard/>} />
-                        */}
+
+                        {/* PROJECTS */}
+                        <Route path="/projects/bfrbreak" element={<ProjectBFRBreak/>} />
+                        <Route path="/projects/emotiverse" element={<ProjectEmotiVerse/>} />
+                        <Route path="/projects/greencloset" element={<ProjectGreenCloset/>} />
+                        <Route path="/projects/gymstar" element={<ProjectGymStar/>} />
+                        <Route path="/projects/huddle" element={<ProjectHuddle/>} />
+                        <Route path="/projects/lingual" element={<ProjectLingual/>} />
+                        <Route path="/projects/medisymp" element={<ProjectMediSymp/>} />
+                        <Route path="/projects/nomnom" element={<ProjectNomNom/>} />
+                        <Route path="/projects/optimizeme" element={<ProjectOptimizeMe/>} />
+                        <Route path="/projects/penpal" element={<ProjectPenPal/>} />
+                        <Route path="/projects/pinpal" element={<ProjectPinPal/>} />
+                        <Route path="/projects/smartboxer" element={<ProjectSmartBoxer/>} />
+                        <Route path="/projects/strelmo" element={<ProjectStrelmo/>} />
+                        <Route path="/projects/thekiddietable" element={<ProjectTheKiddeTable/>} />
+                        <Route path="/projects/tracne" element={<ProjectTracne/>} />
+                        <Route path="/projects/wishbone" element={<ProjectWishbone/>} />
+
                         <Route path="/projects/template" element={<ProjectTemplate/>} />
                         <Route path="/assignments" element={<Assignments/>}>
                             <Route path="" element={<AssignmentsOverview/>} />
