@@ -34,6 +34,11 @@ const SECTION_TIME_AND_LOCATIONS: TimeAndLocation[] = [
     '12:30 - 1:20 | MGH 058',
     '1:30 - 2:20 | MGH 058',
 ]
+const SECTION_TIME_AND_LOCATIONS_WITHOUT_A: TimeAndLocation[] = [
+    '11:30 - 12:20 | MGH 058',
+    '12:30 - 1:20 | MGH 058',
+    '1:30 - 2:20 | MGH 058',
+]
 const SECTION_TIME_AND_LOCATIONS_WITHOUT_D: TimeAndLocation[] = [
     '10:30 - 11:20 | MGH 058',
     '11:30 - 12:20 | MGH 058',
@@ -214,7 +219,7 @@ export class CourseDataStore {
                 date: DateTime.fromISO('2023-02-28'),
                 timeAndLocation: LECTURE_TIME_AND_LOCATION,
                 title: 'History',
-                // slides: 'https://canvas.uw.edu/files/92480229',
+                slides: 'https://canvas.uw.edu/files/102772743/',
             },
 
             //
@@ -398,7 +403,7 @@ export class CourseDataStore {
                 type: 'event',
                 title: 'Presentations',
                 date: DateTime.fromISO('2023-03-03'),
-                timeAndLocations: SECTION_TIME_AND_LOCATIONS,
+                timeAndLocations: SECTION_TIME_AND_LOCATIONS_WITHOUT_A,
             },
             {
                 type: 'event',
