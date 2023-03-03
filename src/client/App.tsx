@@ -29,8 +29,8 @@ import Projects from "src/pages/Projects.mdx";
 
 /* PROJECTS */
 
-import ProjectBFRBreak from '../projects/bfrbreak/project_post.mdx';
 import ProjectEmotiVerse from '../projects/emotiverse/project_post.mdx';
+import ProjectFlutter from '../projects/flutter/project_post.mdx';
 import ProjectGreenCloset from '../projects/greencloset/project_post.mdx';
 import ProjectGymStar from '../projects/gymstar/project_post.mdx';
 import ProjectHuddle from '../projects/huddle/project_post.mdx';
@@ -40,7 +40,7 @@ import ProjectNomNom from '../projects/medisymp/project_post.mdx';
 import ProjectOptimizeMe from '../projects/optimizeme/project_post.mdx';
 import ProjectPenPal from '../projects/penpal/project_post.mdx';
 import ProjectPinPal from '../projects/pinpal/project_post.mdx';
-import ProjectSmartBoxer from '../projects/smartboxer/project_post.mdx';
+import ProjectSkia from '../projects/skia/project_post.mdx';
 import ProjectStrelmo from '../projects/strelmo/project_post.mdx';
 import ProjectTheKiddeTable from '../projects/thekiddietable/project_post.mdx';
 import ProjectTracne from '../projects/tracne/project_post.mdx';
@@ -180,8 +180,8 @@ export const App: React.FunctionComponent = () => {
                         <Route path="/projects" element={<Projects/>} />
 
                         {/* PROJECTS */}
-                        <Route path="/projects/bfrbreak" element={<ProjectBFRBreak/>} />
                         <Route path="/projects/emotiverse" element={<ProjectEmotiVerse/>} />
+                        <Route path="/projects/flutter" element={<ProjectFlutter/>} />
                         <Route path="/projects/greencloset" element={<ProjectGreenCloset/>} />
                         <Route path="/projects/gymstar" element={<ProjectGymStar/>} />
                         <Route path="/projects/huddle" element={<ProjectHuddle/>} />
@@ -191,7 +191,7 @@ export const App: React.FunctionComponent = () => {
                         <Route path="/projects/optimizeme" element={<ProjectOptimizeMe/>} />
                         <Route path="/projects/penpal" element={<ProjectPenPal/>} />
                         <Route path="/projects/pinpal" element={<ProjectPinPal/>} />
-                        <Route path="/projects/smartboxer" element={<ProjectSmartBoxer/>} />
+                        <Route path="/projects/skia" element={<ProjectSkia/>} />
                         <Route path="/projects/strelmo" element={<ProjectStrelmo/>} />
                         <Route path="/projects/thekiddietable" element={<ProjectTheKiddeTable/>} />
                         <Route path="/projects/tracne" element={<ProjectTracne/>} />
